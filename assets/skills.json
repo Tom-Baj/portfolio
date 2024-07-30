@@ -1,0 +1,32 @@
+{
+  "skills-list": [
+    {
+      "id": "HTML",
+      "name": "HTML"
+    },
+    {
+      "id": "CSS",
+      "name": "CSS"
+    },
+    {
+      "id": "javascript",
+      "name": "Javascript"
+    },
+    {
+      "id": "react",
+      "name": "React"
+    },
+    {
+      "id": "nodejs",
+      "name": "NodeJs"
+    },
+    {
+      "id": "express",
+      "name": "Express"
+    },
+    {
+      "id": "mongodb",
+      "name": "MongoDB"
+    }
+  ]
+}
