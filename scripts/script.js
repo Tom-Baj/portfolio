@@ -1,18 +1,28 @@
-document.addEventListener("DOMContentLoaded", function () {
-  fetch("assets/nav.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const navList = document.getElementById("nav-list");
-      data.navlinks.forEach((link) => {
-        const listItem = document.createElement("li");
-        listItem.className = "header__nav-item";
-        const anchor = document.createElement("a");
-        anchor.className = "header__nav-link";
-        anchor.href = link.path;
-        anchor.textContent = link.name;
-        listItem.appendChild(anchor);
-        navList.appendChild(listItem);
-      });
-    })
-    .catch((error) => console.error("Error loading navigation:", error));
+import { navLinks, skillsList, projectsList } from "./datas.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  NavLink(navLinks);
+  SkillList(skillsList);
 });
+
+function NavLink(links) {
+  const navLinksContainer = document.getElementById("nav-list");
+  links.forEach((link) => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = link.url;
+    a.textContent = link.name;
+    li.appendChild(a);
+    navLinksContainer.appendChild(li);
+  });
+}
+
+function SkillList(skill) {
+  for (let i = 0; i < skillsList.length; i++) {
+    const element = skillsList[i];
+    const skillsListContainer = document.getElementById("skills__list");
+    const li = document.createElement("li");
+    li.innerText = element;
+    skillsListContainer.appendChild(li);
+  }
+}
