@@ -1,52 +1,6 @@
-/* _base.scss */
-
-/* Basic typography settings */
+/* Body */
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  background-color: #fff;
-}
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-/* Paragraphs */
-p {
-  margin-bottom: 1rem;
+  font-family: "Chillax-Regular", sans-serif;
 }
 
 /* Links */
@@ -54,13 +8,11 @@ a {
   color: black;
   text-decoration: none;
 }
-/* Lists */
-ul,
-ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
 
-li {
-  margin-bottom: 0.5rem;
+/* Section */
+section {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  height: 100vh;
 }

@@ -13,8 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
 function NavLink(links) {
   links.forEach((link) => {
     const li = document.createElement("li");
+    li.classList.add("header__nav-list__item");
     const a = document.createElement("a");
-    a.href = link.url;
+    a.href = link.path;
     a.textContent = link.name;
     li.appendChild(a);
     navLinksContainer.appendChild(li);
