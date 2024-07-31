@@ -1,0 +1,156 @@
+/* Chillax */
+@font-face {
+  font-family: "Chillax-Regular";
+  src: url("../assets/fonts/Chillax/Chillax-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Chillax/Chillax-Regular.woff") format("woff"),
+    url("../assets/fonts/Chillax/Chillax-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Medium";
+  src: url("../assets/fonts/Chillax/Chillax-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Chillax/Chillax-Medium.woff") format("woff"),
+    url("../assets/fonts/Chillax/Chillax-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Semibold";
+  src: url("../assets/fonts/Chillax/Chillax-Semibold.woff2") format("woff2"),
+    url("../assets/fonts/Chillax/Chillax-Semibold.woff") format("woff"),
+    url("../assets/fonts/Chillax/Chillax-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Bold";
+  src: url("../assets/fonts/Chillax/Chillax-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Chillax/Chillax-Bold.woff") format("woff"),
+    url("../assets/fonts/Chillax/Chillax-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Variable";
+  src: url("../assets/fonts/Chillax/Chillax-Variable.woff2") format("woff2"),
+    url("../assets/fonts/Chillax/Chillax-Variable.woff") format("woff"),
+    url("../assets/fonts/Chillax/Chillax-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Outward */
+@font-face {
+  font-family: "Outward";
+  src: url("../assets/fonts/Outward/outward-block-webfont.eot");
+  src: url("../assets/fonts/Outward/outward-block-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Outward/outward-block-webfont.woff2") format("woff2"),
+    url("../assets/fonts/Outward/outward-block-webfont.woff") format("woff"),
+    url("../assets/fonts/Outward/outward-block-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Outward";
+  src: url("../assets/fonts/Outward/outward-borders-webfont.eot");
+  src: url("../assets/fonts/Outward/outward-borders-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Outward/outward-borders-webfont.woff2") format("woff2"),
+    url("../assets/fonts/Outward/outward-borders-webfont.woff") format("woff"),
+    url("../assets/fonts/Outward/outward-borders-webfont.ttf")
+      format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Outward";
+  src: url("../assets/fonts/Outward/outward-");
+  src: url("../assets/fonts/Outward/outward-?#iefix")
+      format("embedded-opentype"),
+    url("../assets/fonts/Outward/outward-round-webfont.woff2") format("woff2"),
+    url("../assets/fonts/Outward/outward-round-webfont.woff") format("woff"),
+    url("../assets/fonts/Outward/outward-round-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Lemon */
+@font-face {
+  font-family: "LemonWide";
+  src: url("../assets/fonts/Lemon/Lemon-Wide.woff") format("woff"),
+    url("../assets/fonts/Lemon/Lemon-Wide.woff2") format("woff2"),
+    url("../assets/fonts/Lemon/Lemon-Wide.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "Lemon";
+  src: url("../assets/fonts/Lemon/Lemon-Regular.woff") format("woff"),
+    url("../assets/fonts/Lemon/Lemon-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Lemon/Lemon-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "LemonWide";
+  src: url("../assets/fonts/Lemon/Lemon-Wide.woff") format("woff"),
+    url("../assets/fonts/Lemon/Lemon-Wide.woff2") format("woff2"),
+    url("../assets/fonts/Lemon/Lemon-Wide.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "Lemon";
+  src: url("../assets/fonts/Lemon/Lemon-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Lemon/Lemon-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+/* Thunder */
+@font-face {
+  font-family: "Thunder";
+  src: url("../assets/fonts/Thunder/Thunder-LC.woff") format("woff"),
+    url("../assets/fonts/Thunder/Thunder-LC.woff2") format("woff2"),
+    url("../assets/fonts/Thunder/Thunder-LC.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+@font-face {
+  font-family: "Thunder";
+  src: url("../assets/fonts/Thunder/Thunder-BoldLC.woff") format("woff"),
+    url("../assets/fonts/Thunder/Thunder-BoldLC.woff2") format("woff2"),
+    url("../assets/fonts/Thunder/Thunder-BoldLC.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+
+/* Nohemi */
+@font-face {
+  font-family: "Nohemi";
+  src: url("../assets/fonts/Nohemi/Nohemi-Regular.ttf") format("truetype"),
+    url("../assets/fonts/Nohemi//Nohemi-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Nohemi//Nohemi-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}

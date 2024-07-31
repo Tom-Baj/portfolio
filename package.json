@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "aos": "^2.3.4",
+    "fullpage.js": "^4.0.26",
+    "gsap": "^3.12.5",
+    "rellax": "^1.12.1",
+    "scrollmagic": "^2.0.8"
+  }
+}

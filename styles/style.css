@@ -1,8 +1,140 @@
-/* _reset.scss */
-/* Box sizing rules */
-*,
-*::before,
-*::after {
+/* Chillax */
+@font-face {
+  font-family: "Chillax-Regular";
+  src: url("../assets/fonts/Chillax/Chillax-Regular.woff2") format("woff2"), url("../assets/fonts/Chillax/Chillax-Regular.woff") format("woff"), url("../assets/fonts/Chillax/Chillax-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Medium";
+  src: url("../assets/fonts/Chillax/Chillax-Medium.woff2") format("woff2"), url("../assets/fonts/Chillax/Chillax-Medium.woff") format("woff"), url("../assets/fonts/Chillax/Chillax-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Semibold";
+  src: url("../assets/fonts/Chillax/Chillax-Semibold.woff2") format("woff2"), url("../assets/fonts/Chillax/Chillax-Semibold.woff") format("woff"), url("../assets/fonts/Chillax/Chillax-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Bold";
+  src: url("../assets/fonts/Chillax/Chillax-Bold.woff2") format("woff2"), url("../assets/fonts/Chillax/Chillax-Bold.woff") format("woff"), url("../assets/fonts/Chillax/Chillax-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Chillax-Variable";
+  src: url("../assets/fonts/Chillax/Chillax-Variable.woff2") format("woff2"), url("../assets/fonts/Chillax/Chillax-Variable.woff") format("woff"), url("../assets/fonts/Chillax/Chillax-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+/* Outward */
+@font-face {
+  font-family: "Outward";
+  src: url("../assets/fonts/Outward/outward-block-webfont.eot");
+  src: url("../assets/fonts/Outward/outward-block-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Outward/outward-block-webfont.woff2") format("woff2"), url("../assets/fonts/Outward/outward-block-webfont.woff") format("woff"), url("../assets/fonts/Outward/outward-block-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outward";
+  src: url("../assets/fonts/Outward/outward-borders-webfont.eot");
+  src: url("../assets/fonts/Outward/outward-borders-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Outward/outward-borders-webfont.woff2") format("woff2"), url("../assets/fonts/Outward/outward-borders-webfont.woff") format("woff"), url("../assets/fonts/Outward/outward-borders-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outward";
+  src: url("../assets/fonts/Outward/outward-");
+  src: url("../assets/fonts/Outward/outward-?#iefix") format("embedded-opentype"), url("../assets/fonts/Outward/outward-round-webfont.woff2") format("woff2"), url("../assets/fonts/Outward/outward-round-webfont.woff") format("woff"), url("../assets/fonts/Outward/outward-round-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+/* Lemon */
+@font-face {
+  font-family: "LemonWide";
+  src: url("../assets/fonts/Lemon/Lemon-Wide.woff") format("woff"), url("../assets/fonts/Lemon/Lemon-Wide.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Wide.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "Lemon";
+  src: url("../assets/fonts/Lemon/Lemon-Regular.woff") format("woff"), url("../assets/fonts/Lemon/Lemon-Regular.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "LemonWide";
+  src: url("../assets/fonts/Lemon/Lemon-Wide.woff") format("woff"), url("../assets/fonts/Lemon/Lemon-Wide.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Wide.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "Lemon";
+  src: url("../assets/fonts/Lemon/Lemon-Regular.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+/* Thunder */
+@font-face {
+  font-family: "Thunder";
+  src: url("../assets/fonts/Thunder/Thunder-LC.woff") format("woff"), url("../assets/fonts/Thunder/Thunder-LC.woff2") format("woff2"), url("../assets/fonts/Thunder/Thunder-LC.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+@font-face {
+  font-family: "Thunder";
+  src: url("../assets/fonts/Thunder/Thunder-BoldLC.woff") format("woff"), url("../assets/fonts/Thunder/Thunder-BoldLC.woff2") format("woff2"), url("../assets/fonts/Thunder/Thunder-BoldLC.ttf") format("truetype");
+  font-style: normal;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+}
+/* Nohemi */
+@font-face {
+  font-family: "Nohemi";
+  src: url("../assets/fonts/Nohemi/Nohemi-Regular.ttf") format("truetype"), url("../assets/fonts/Nohemi//Nohemi-Regular.woff2") format("woff2"), url("../assets/fonts/Nohemi//Nohemi-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+/* Base */
+/* Blue Palette */
+/* Pastel 1 */
+/* Pastel 2 */
+/* Dark Blue */
+/* Border Radius */
+/* Width */
+/* Body */
+body {
+  font-family: "Chillax-Regular", sans-serif;
+}
+
+/* Links */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Section */
+section {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  height: 100vh;
+}
+
+* {
   box-sizing: border-box;
 }
 
@@ -31,26 +163,6 @@ ul {
   list-style: none;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -59,84 +171,41 @@ select {
   font: inherit;
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
+/* Header */
+.header {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  width: 75%;
+  margin: 20px auto;
 }
-/* Base */
-/* Blue Palette */
-/* Pastel 1 */
-/* Pastel 2 */
-/* Dark Blue */
-/* _base.scss */
-/* Basic typography settings */
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  background-color: #fff;
+.header__logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  line-height: 1.2;
+.header__logo-link {
+  width: 100%;
+  height: 70px;
 }
-
-h1 {
-  font-size: 2.5rem;
+.header__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-
-h2 {
-  font-size: 2rem;
+.header__nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-h3 {
-  font-size: 1.75rem;
+.header__nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-/* Paragraphs */
-p {
-  margin-bottom: 1rem;
-}
-
-/* Links */
-a {
-  color: black;
-  text-decoration: none;
-}
-
-/* Lists */
-ul,
-ol {
-  margin-bottom: 1rem;
-  padding-left: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
+.header__nav-list__item {
+  margin: 0 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

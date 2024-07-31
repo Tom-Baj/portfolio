@@ -1,14 +1,14 @@
 export const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Compétences", path: "/skills" },
-  { name: "Projets", path: "/projects" },
-  { name: "Contact", path: "/contact" },
+  { name: "Home", path: "#presentation" },
+  { name: "About", path: "#about" },
+  { name: "Compétences", path: "#skills" },
+  { name: "Projets", path: "#projects" },
+  { name: "Contact", path: "#contact" },
 ];
 
 export const skillsList = [
   "HTML",
-  "CSS",
+  "CSS / Sass",
   "Javascript",
   "React",
   "NodeJs",
