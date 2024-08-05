@@ -1,6 +1,9 @@
 /* Body */
 body {
   font-family: "Chillax-Regular", sans-serif;
+  color: $platinum;
+  max-width: 100vw;
+  background-color: $background-color;
 }
 
 /* Links */
@@ -10,9 +13,12 @@ a {
 }
 
 /* Section */
-section {
+.section-container {
   margin: 0 auto;
   padding: 20px;
-  max-width: 1200px;
   height: 100vh;
+}
+
+#about {
+  background-color: $blue;
 }

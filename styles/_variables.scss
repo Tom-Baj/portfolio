@@ -1,5 +1,6 @@
 /* Base */
 $creme-color: hsla(48, 100%, 97%, 1);
+$background-color: hsla(264, 38%, 5%, 1);
 
 /* Blue Palette */
 $blue-dark: hsla(210, 40%, 18%, 1);
@@ -16,7 +17,7 @@ $uranian-blue: hsla(204, 100%, 90%, 1);
 $light-sky-blue: hsla(204, 95%, 80%, 1);
 
 /* Pastel 2 */
-$mimi-pink: hsla(336, 56%, 88%, 0.5);
+$mimi-pink: hsla(336, 56%, 88%, 1);
 $alice-blue: hsla(199, 61%, 91%, 1);
 $light-sky-blue: hsla(204, 95%, 80%, 1);
 $jordy-blue: hsla(202, 100%, 75%, 1);
@@ -37,6 +38,14 @@ $radius-large: 20px;
 
 /* Width */
 $width-full: 100%;
+$width-max: 95%;
 $width-big: 75%;
 $width-middle: 50%;
 $width-small: 25%;
+
+/* Variables de couleur ombres*/
+$light-shadow-color: rgba(255, 255, 255, 0.8);
+$dark-shadow-color: rgba(0, 0, 0, 0.2);
+
+/* Profondeur de l'ombre */
+$shadow-depth: 5px;
