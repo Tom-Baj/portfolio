@@ -1,5 +1,19 @@
+/* Flex center */
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Neumorphisme box*/
+@mixin neumorphism-shadow($shadow-depth, $direction-light, $direction-dark) {
+  $light-shadow-x: -$shadow-depth * cos($direction-light);
+  $light-shadow-y: $shadow-depth * sin($direction-light);
+
+  $dark-shadow-x: $shadow-depth * cos($direction-dark);
+  $dark-shadow-y: $shadow-depth * sin($direction-dark);
+
+  box-shadow: #{$light-shadow-x} #{$light-shadow-y} $shadow-depth
+      $light-shadow-color,
+    #{$dark-shadow-x} #{$dark-shadow-y} $shadow-depth $dark-shadow-color;
 }

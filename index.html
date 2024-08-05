@@ -8,67 +8,117 @@
     <link rel="stylesheet" href="styles/style.css" />
     <script type="module" src="scripts/script.js"></script>
   </head>
-  <body>
-    <header class="header">
-      <div class="header__logo-container">
-        <a href="#main" class="header__logo-link">
-          <img class="header__logo" src="assets/images/logo.webp" alt="logo" />
+
+<!--   <body>
+    <div class="loader" id="loader">
+      <div class="loader__spinner"></div>
+    </div> -->
+
+    <header class="header" id="header">
+      <div class="header__container">
+      <div class="header__container__logo-container">
+        <a href="#main" class="header__container__logo-link">
+          <img class="header__container__logo" src="assets/images/logo.webp" alt="logo" />
         </a>
       </div>
-      <div class="header__nav-container">
-        <nav class="header__nav">
-          <ul class="header__nav-list" id="nav-list"></ul>
+      <div class="header__container__nav-container">
+        <nav class="header__container__nav">
+          <ul class="header__container__nav-list" id="nav-list"></ul>
         </nav>
       </div>
+    </div>
     </header>
-    
+
     <main class="main" id="main">
       <div class="main__container">
-        <div class="main__presentation" id="presentation">
-          <section class="home section-container">
-            <div class="home__content">
-              <h1 class="home__title">Tom Bajoux</h1>
-              <p class="home__description">Développeur web junior</p>
-            </div>
-          </section>
-          <section class="about section-container" id="about">
-            <div class="about__content">
-              <h2 class="about__title">À propos</h2>
-              <p class="about__description">
-                Passionné par le développement web, je suis actuellement en
-                formation chez OpenClassrooms pour devenir développeur web
-                junior. Je suis à la recherche d'une entreprise pour un contrat
-                d'apprentissage en alternance.
-              </p>
-            </div>
-          </section>
-        </div>
+        <section class="home section-container" id>
+          <div class="home__image-container">
+            <img
+              class="home__image-container--image"
+              src="/assets/images/computer2.png"
+              alt="ordinateur"
+            />
+          </div>
+          <div class="home__content">
+            <h1 class="home__title">Bonjour,<br> Je suis Tom Bajoux. <br>
+              <span class="home__title--description type-writing">Développeur web junior </span>
+            </h1>
+          </div>
+          
+        </section>
+
+        <section class="about section-container" id="about">
+          <div class="about__content">
+            <h2 class="about__title">À propos</h2>
+            <p class="about__description">
+              Passionné par le développement web, je suis actuellement en
+              formation chez OpenClassrooms pour devenir développeur web junior.
+              Je suis à la recherche d'une entreprise pour un contrat
+              d'apprentissage en alternance.
+            </p>
+          </div>
+          <div class="about__image-container">
+            <img
+              class="about__image"
+              src="assets/images/profil.png"
+              alt="Tom Bajoux"
+            />
+          </div>
+        </section>
+
         <section class="skills section-container" id="skills">
           <div class="skills__content">
             <h2 class="skills__title">Compétences</h2>
             <ul class="skills__list" id="skills-list"></ul>
           </div>
         </section>
+
         <section class="projects section-container" id="projects">
-          <div class="projects__container" id="projects-list"></div>
+          <div class="projects__list" id="projects-list"></div>
         </section>
-        <section class="contact section-container" id="contact"></section>
+
+        <section class="contact section-container" id="contact">
+          <div class="contact__content">
+            <h2 class="contact__title">Contact</h2>
+            <p class="contact__description">
+              Vous pouvez me contacter par e-mail ou sur les réseaux sociaux.
+            </p>
+            <a href="mailto:bajouxtom@gmail.com" class="contact__email-link"
+              >Envoyer un e-mail</a
+            >
+          </div>
+        </section>
+      </div>
+
+      <div class="main__scroll-top" id="scroll-top">
+        <a href="#main" class="main__scroll-top-link">
+          <img
+            class="main__scroll-top-icon"
+            src="assets/icons/arrow-up.svg"
+            alt="scroll top"
+          />
+        </a>
       </div>
     </main>
-    
+
     <footer class="footer">
       <div class="footer__container">
-        <a href="mailto:baouxtom@hotmail.com">
-        <div class="footer__container--social-links">
-          <a href="www.linkedin.com/in/tom-baj" target="_blank">LinkedIn</a>
+        <a href="mailto:baouxtom@hotmail.com" class="footer__email-link"
+          >Contactez-moi</a
+        >
+        <div class="footer__social-links">
+          <a href="https://www.linkedin.com/in/tom-baj" target="_blank"
+            >LinkedIn</a
+          >
           <a href="https://github.com/Tom-Baj" target="_blank">GitHub</a>
-          <a href="/politique-de-confidentialite">Politique de confidentialité</a>
+          <a href="/politique-de-confidentialite"
+            >Politique de confidentialité</a
+          >
         </div>
-          <div class="copyright-container">
-            &#169; 2024 Tom Bajoux. Tous droits réservés.
-          </div>
+        <div class="footer__copyright">
+          &#169; 2024 Tom Bajoux. Tous droits réservés.
         </div>
+      </div>
     </footer>
-    
   </body>
 </html>
