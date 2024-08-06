@@ -6,45 +6,75 @@
     <title>Portfolio, Tom Bajoux</title>
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="styles/style.css" />
-    <script type="module" src="scripts/script.js"></script>
   </head>
 
-<!--   <body>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container">
+        <div class="header__container__logo-container">
+          <a href="#main" class="header__container__logo-link">
+            <img
+              class="header__container__logo"
+              src="assets/images/logo.webp"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <div class="header__container__nav-container">
+          <nav class="header__container__nav">
+            <ul class="header__container__nav-list" id="nav-list"></ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!--   <body>
     <div class="loader" id="loader">
       <div class="loader__spinner"></div>
     </div> -->
 
-    <header class="header" id="header">
-      <div class="header__container">
-      <div class="header__container__logo-container">
-        <a href="#main" class="header__container__logo-link">
-          <img class="header__container__logo" src="assets/images/logo.webp" alt="logo" />
-        </a>
-      </div>
-      <div class="header__container__nav-container">
-        <nav class="header__container__nav">
-          <ul class="header__container__nav-list" id="nav-list"></ul>
-        </nav>
-      </div>
-    </div>
-    </header>
-
     <main class="main" id="main">
       <div class="main__container">
-        <section class="home section-container" id>
+        <section class="home section-container" id="home">
           <div class="home__image-container">
             <img
-              class="home__image-container--image"
-              src="/assets/images/computer2.png"
+              class="home__image-container--image ordinateur"
+              src="/assets/images/computer.png"
               alt="ordinateur"
             />
           </div>
+
           <div class="home__content">
-            <h1 class="home__title">Bonjour,<br> Je suis Tom Bajoux. <br>
-              <span class="home__title--description type-writing">Développeur web junior </span>
+            <h1 class="home__title">
+              Bonjour,<br />
+              Je suis Tom Bajoux. <br />
+              <span class="home__title--description type-writing"
+                >Développeur web junior !
+              </span>
             </h1>
           </div>
-          
+          <div class="home__image-container--image-bg-container">
+            <img
+              class="rellax astronaut"
+              src="./assets/images/astronaut.png"
+              alt="astronaut"
+            />
+            <img
+              class="rellax moon"
+              src="./assets/images/moon.png"
+              alt="moon"
+            />
+            <img
+              src="./assets/images/saturne.webp"
+              alt="saturne"
+              class="rellax saturne"
+            />
+            <img
+              src="./assets/images/earth.webp"
+              alt="earth"
+              class="rellax earth"
+            />
+          </div>
         </section>
 
         <section class="about section-container" id="about">
@@ -60,7 +90,7 @@
           <div class="about__image-container">
             <img
               class="about__image"
-              src="assets/images/profil.png"
+              src="assets/images/tom.webp"
               alt="Tom Bajoux"
             />
           </div>
@@ -120,5 +150,6 @@
         </div>
       </div>
     </footer>
+    <script type="module" src="scripts/script.js"></script>
   </body>
 </html>
