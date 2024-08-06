@@ -63,6 +63,15 @@ a {
   background-color: hsl(210, 64%, 80%);
 }
 
+/* Allan */
+@font-face {
+  font-family: "Allan-Regular";
+  src: url("../assets/fonts/Allan/allan-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Allan-Bold";
+  src: url("../assets/fonts/Allan/allan-700.ttf") format("truetype");
+}
 /* Chillax */
 @font-face {
   font-family: "Chillax-Regular";
@@ -284,15 +293,17 @@ a {
   width: 100%;
 }
 .home__content {
+  text-shadow: 1px 1px 2px hsl(264, 38%, 5%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  z-index: 1;
 }
 .home__title {
-  font-family: "Thunder", sans-serif;
-  font-size: 4em;
+  font-family: "Allan-Regular", sans-serif;
+  font-size: 5em;
 }
 .home__title--description {
   font-family: "Nohemi", sans-serif;
@@ -302,14 +313,54 @@ a {
   display: inline-block;
 }
 .home__image-container {
+  position: relative;
   width: 50%;
   display: flex;
   align-items: end;
 }
-.home__image-container--image {
+.home__image-container--image-bg-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.home .ordinateur {
   width: 100%;
   object-fit: cover;
   transition: transform 0.1s ease-out;
+}
+.home .astronaut {
+  position: absolute;
+  top: 180px;
+  right: -100px;
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+.home .moon {
+  position: absolute;
+  top: 0px;
+  right: 850px;
+  width: 15%;
+  height: auto;
+  object-fit: cover;
+}
+.home .saturne {
+  position: absolute;
+  top: 300px;
+  right: 1600px;
+  width: 18%;
+  height: auto;
+  object-fit: cover;
+}
+.home .earth {
+  position: absolute;
+  top: 700px;
+  right: 700px;
+  width: 10%;
+  height: auto;
+  object-fit: cover;
 }
 
 .about {
