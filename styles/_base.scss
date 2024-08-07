@@ -20,5 +20,18 @@ a {
 }
 
 #about {
-  background-color: $blue;
+  /* background-image: url(../assets/images/background.webp);
+  
+  background-size: cover; */
+  background-color: $yale-blue;
+  position: relative;
+  z-index: 2;
+}
+
+#skills {
+  background-color: $yinmn-blue;
+}
+
+#projects {
+  background-color: $blue-medium;
 }

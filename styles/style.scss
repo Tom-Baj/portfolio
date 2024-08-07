@@ -6,12 +6,19 @@
 @import "animations";
 
 /* Header */
+#header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
 .header__container {
   display: flex;
   justify-content: space-between;
   margin: 20px;
   height: 50px;
-  background-color: $background-color;
 
   &__logo-container {
     display: flex;
@@ -21,7 +28,7 @@
 
   &__logo-link {
     display: block;
-    height: 4.5em;
+    height: 4.5rem;
   }
 
   &__logo {
@@ -44,11 +51,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2em;
+    gap: 2rem;
   }
 
   &__nav-item {
-    padding: 0 1em;
+    padding: 0 1rem;
     border-radius: $radius-medium;
     background-color: $background-color;
     @include neumorphism-shadow($shadow-depth, 330deg, 150deg);
@@ -57,7 +64,7 @@
   &__nav-link {
     color: $platinum;
     font-family: "Dongle-Light", sans-serif;
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
 }
 
@@ -69,7 +76,7 @@
   width: $width-full;
 
   &__content {
-    text-shadow: 1px 1px 2px $background-color;
+    text-shadow: 4px 4px 5px $background-color;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,11 +88,11 @@
   &__title {
     font-family: "Allan-Regular", sans-serif;
 
-    font-size: 5em;
+    font-size: 5rem;
 
     &--description {
       font-family: "Nohemi", sans-serif;
-      font-size: 0.5em;
+      font-size: 2.5rem;
       white-space: nowrap;
       overflow: hidden;
       display: inline-block;
@@ -108,14 +115,16 @@
   }
 
   .ordinateur {
+    position: absolute;
     width: 100%;
     object-fit: cover;
     transition: transform 0.1s ease-out;
+    z-index: 1;
   }
 
   .astronaut {
     position: absolute;
-    top: 180px;
+    top: 400px;
     right: -100px;
     width: 30%;
     height: auto;
@@ -124,27 +133,28 @@
 
   .moon {
     position: absolute;
-    top: 0px;
-    right: 850px;
-    width: 15%;
+    top: 100px;
+    right: 1500px;
+    width: 10%;
     height: auto;
     object-fit: cover;
+    z-index: 0;
   }
 
-  .saturne {
+  /*   .saturne {
     position: absolute;
     top: 300px;
     right: 1600px;
     width: 18%;
     height: auto;
     object-fit: cover;
-  }
+  } */
 
   .earth {
     position: absolute;
     top: 700px;
-    right: 700px;
-    width: 10%;
+    right: 650px;
+    width: 12%;
     height: auto;
     object-fit: cover;
   }
@@ -153,11 +163,33 @@
 .about {
   display: flex;
 
+  &__content {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 1;
+    width: $width-middle;
+  }
+
+  &__description-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 1;
+    width: $width-middle;
+  }
+
   &__image-container {
     width: $width-middle;
   }
 
   &__image {
+    height: 100%;
     width: 100%;
     object-fit: cover;
     transition: transform 0.1s ease-out;
