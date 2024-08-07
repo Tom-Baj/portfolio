@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ProjectsList(projectsList);
   TypeWriting();
   setupScrollAnimation();
+  rellax();
 });
 
 /* Scroll Animation */

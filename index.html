@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio, Tom Bajoux</title>
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
@@ -15,7 +16,7 @@
           <a href="#main" class="header__container__logo-link">
             <img
               class="header__container__logo"
-              src="assets/images/logo.webp"
+              src="assets/icons/logo.webp"
               alt="logo"
             />
           </a>
@@ -56,23 +57,27 @@
           <div class="home__image-container--image-bg-container">
             <img
               class="rellax astronaut"
+              data-rellax-speed="3"
               src="./assets/images/astronaut.png"
               alt="astronaut"
             />
             <img
               class="rellax moon"
+              data-rellax-speed="-20"
               src="./assets/images/moon.png"
               alt="moon"
             />
-            <img
+            <!-- <img
               src="./assets/images/saturne.webp"
               alt="saturne"
               class="rellax saturne"
-            />
+              data-rellax-speed="-10"
+            /> -->
             <img
               src="./assets/images/earth.webp"
               alt="earth"
               class="rellax earth"
+              data-rellax-speed="11"
             />
           </div>
         </section>
