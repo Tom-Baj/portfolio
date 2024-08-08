@@ -43,37 +43,20 @@ body {
   font-family: "Chillax-Regular", sans-serif;
   color: hsl(75, 6%, 87%);
   max-width: 100vw;
-  background-color: hsl(264, 38%, 5%);
+  /*   background-color: $background-color;
+  */
+  background: rgb(37, 28, 107);
+  background: linear-gradient(0deg, rgb(37, 28, 107) 0%, rgb(35, 25, 92) 25%, rgb(31, 23, 80) 40%, rgb(27, 19, 66) 55%, rgb(25, 19, 63) 70%, rgb(22, 16, 54) 85%, rgb(14, 11, 26) 100%);
+  /* Links */
+  /* Section */
 }
-
-/* Links */
-a {
+body a {
   color: black;
   text-decoration: none;
 }
-
-/* Section */
-.section-container {
+body .section-container {
   margin: 0 auto;
-  padding: 20px;
   height: 100vh;
-}
-
-#about {
-  /* background-image: url(../assets/images/background.webp);
-
-  background-size: cover; */
-  background-color: hsl(210, 100%, 22%);
-  position: relative;
-  z-index: 2;
-}
-
-#skills {
-  background-color: hsl(212, 29%, 36%);
-}
-
-#projects {
-  background-color: hsl(210, 49%, 28%);
 }
 
 /* Allan */
@@ -142,72 +125,6 @@ a {
   font-weight: 700;
   font-display: swap;
   font-style: normal;
-}
-/* Outward */
-@font-face {
-  font-family: "Outward";
-  src: url("../assets/fonts/Outward/outward-block-webfont.eot");
-  src: url("../assets/fonts/Outward/outward-block-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Outward/outward-block-webfont.woff2") format("woff2"), url("../assets/fonts/Outward/outward-block-webfont.woff") format("woff"), url("../assets/fonts/Outward/outward-block-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Outward";
-  src: url("../assets/fonts/Outward/outward-borders-webfont.eot");
-  src: url("../assets/fonts/Outward/outward-borders-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Outward/outward-borders-webfont.woff2") format("woff2"), url("../assets/fonts/Outward/outward-borders-webfont.woff") format("woff"), url("../assets/fonts/Outward/outward-borders-webfont.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Outward";
-  src: url("../assets/fonts/Outward/outward-");
-  src: url("../assets/fonts/Outward/outward-?#iefix") format("embedded-opentype"), url("../assets/fonts/Outward/outward-round-webfont.woff2") format("woff2"), url("../assets/fonts/Outward/outward-round-webfont.woff") format("woff"), url("../assets/fonts/Outward/outward-round-webfont.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-/* Lemon */
-@font-face {
-  font-family: "LemonWide";
-  src: url("../assets/fonts/Lemon/Lemon-Wide.woff") format("woff"), url("../assets/fonts/Lemon/Lemon-Wide.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Wide.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: "Lemon";
-  src: url("../assets/fonts/Lemon/Lemon-Regular.woff") format("woff"), url("../assets/fonts/Lemon/Lemon-Regular.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: "LemonWide";
-  src: url("../assets/fonts/Lemon/Lemon-Wide.woff") format("woff"), url("../assets/fonts/Lemon/Lemon-Wide.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Wide.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: "Lemon";
-  src: url("../assets/fonts/Lemon/Lemon-Regular.woff2") format("woff2"), url("../assets/fonts/Lemon/Lemon-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-/* Thunder */
-@font-face {
-  font-family: "Thunder";
-  src: url("../assets/fonts/Thunder/Thunder-LC.woff") format("woff"), url("../assets/fonts/Thunder/Thunder-LC.woff2") format("woff2"), url("../assets/fonts/Thunder/Thunder-LC.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: "Thunder";
-  src: url("../assets/fonts/Thunder/Thunder-BoldLC.woff") format("woff"), url("../assets/fonts/Thunder/Thunder-BoldLC.woff2") format("woff2"), url("../assets/fonts/Thunder/Thunder-BoldLC.ttf") format("truetype");
-  font-style: normal;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
 }
 /* Nohemi */
 @font-face {
@@ -301,16 +218,20 @@ a {
 }
 .header__container__nav-link {
   color: hsl(75, 6%, 87%);
-  font-family: "Dongle-Light", sans-serif;
-  font-size: 1.8rem;
+  font-family: "Chillax-Variable", sans-serif;
+  font-size: 1rem;
 }
 
 /* Home */
 .home {
   display: flex;
-  background-image: url(../assets/images/home.jpg);
+  /*   background-image: url(../assets/images/home.jpg);
+  */
   color: hsl(75, 6%, 87%);
   width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
   /*   .saturne {
     position: absolute;
     top: 300px;
@@ -355,6 +276,7 @@ a {
 }
 .home .ordinateur {
   position: absolute;
+  top: 100px;
   width: 100%;
   object-fit: cover;
   transition: transform 0.1s ease-out;
@@ -386,35 +308,45 @@ a {
   object-fit: cover;
 }
 
+/* About */
 .about {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 .about__content {
+  background-color: hsl(75, 6%, 87%);
+  color: hsl(264, 38%, 5%);
   font-size: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 95%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 auto;
-  z-index: 1;
-  width: 50%;
 }
-.about__description-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  z-index: 1;
+.about__text {
   width: 50%;
+  box-shadow: -4.3301270189px -2.5px 5px rgba(255, 255, 255, 0.8), -4.3301270189px 2.5px 5px rgba(0, 0, 0, 0.2);
+}
+.about__title {
+  font-family: "Allan-Regular", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+.about__description {
+  font-family: "Chillax-Variable", sans-serif;
+  font-size: 1.5rem;
 }
 .about__image-container {
-  width: 50%;
+  height: 100%;
 }
 .about__image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+  max-height: 450px;
+  width: auto;
+  filter: drop-shadow(8px 15px 10px hsl(264, 38%, 5%));
   transition: transform 0.1s ease-out;
 }
 

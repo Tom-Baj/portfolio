@@ -63,17 +63,21 @@
 
   &__nav-link {
     color: $platinum;
-    font-family: "Dongle-Light", sans-serif;
-    font-size: 1.8rem;
+    font-family: "Chillax-Variable", sans-serif;
+    font-size: 1rem;
   }
 }
 
 /* Home */
 .home {
   display: flex;
-  background-image: url(../assets/images/home.jpg);
+  /*   background-image: url(../assets/images/home.jpg);
+ */
   color: $platinum;
   width: $width-full;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 
   &__content {
     text-shadow: 4px 4px 5px $background-color;
@@ -116,6 +120,7 @@
 
   .ordinateur {
     position: absolute;
+    top: 100px;
     width: 100%;
     object-fit: cover;
     transition: transform 0.1s ease-out;
@@ -160,38 +165,50 @@
   }
 }
 
+/* About */
 .about {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 
   &__content {
+    background-color: $platinum;
+    color: $background-color;
     font-size: 2rem;
+    padding: 2rem;
+    border-radius: $radius-medium;
+    width: $width-max;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin: 0 auto;
-    z-index: 1;
-    width: $width-middle;
   }
 
-  &__description-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    z-index: 1;
+  &__text {
     width: $width-middle;
+    @include neumorphism-shadow($shadow-depth, 330deg, 150deg);
+  }
+
+  &__title {
+    font-family: "Allan-Regular", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  &__description {
+    font-family: "Chillax-Variable", sans-serif;
+    font-size: 1.5rem;
   }
 
   &__image-container {
-    width: $width-middle;
+    height: 100%;
   }
 
   &__image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+    max-height: 450px;
+    width: auto;
+    filter: drop-shadow(8px 15px 10px $background-color);
     transition: transform 0.1s ease-out;
   }
 }
