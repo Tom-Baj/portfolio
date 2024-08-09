@@ -49,6 +49,7 @@ body {
   background: linear-gradient(0deg, rgb(37, 28, 107) 0%, rgb(35, 25, 92) 25%, rgb(31, 23, 80) 40%, rgb(27, 19, 66) 55%, rgb(25, 19, 63) 70%, rgb(22, 16, 54) 85%, rgb(14, 11, 26) 100%);
   /* Links */
   /* Section */
+  /* Skills */
 }
 body a {
   color: black;
@@ -57,6 +58,9 @@ body a {
 body .section-container {
   margin: 0 auto;
   height: 100vh;
+}
+body .skills {
+  background-color: hsl(252, 59%, 18%);
 }
 
 /* Allan */
@@ -225,8 +229,7 @@ body .section-container {
 /* Home */
 .home {
   display: flex;
-  /*   background-image: url(../assets/images/home.jpg);
-  */
+  background-image: url(../assets/images/home.jpg);
   color: hsl(75, 6%, 87%);
   width: 100%;
   height: 100vh;
@@ -284,7 +287,7 @@ body .section-container {
 }
 .home .astronaut {
   position: absolute;
-  top: 400px;
+  top: 100px;
   right: -100px;
   width: 30%;
   height: auto;
@@ -293,16 +296,16 @@ body .section-container {
 .home .moon {
   position: absolute;
   top: 100px;
-  right: 1500px;
+  right: 500px;
   width: 10%;
   height: auto;
   object-fit: cover;
-  z-index: 0;
+  z-index: 1;
 }
 .home .earth {
   position: absolute;
-  top: 700px;
-  right: 650px;
+  top: 500px;
+  right: 150px;
   width: 12%;
   height: auto;
   object-fit: cover;
@@ -314,7 +317,6 @@ body .section-container {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 2rem 1rem;
 }
 .about__content {
   background-color: hsl(75, 6%, 87%);
@@ -322,7 +324,7 @@ body .section-container {
   font-size: 2rem;
   padding: 2rem;
   border-radius: 10px;
-  width: 95%;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -330,6 +332,8 @@ body .section-container {
 .about__text {
   width: 50%;
   box-shadow: -4.3301270189px -2.5px 5px rgba(255, 255, 255, 0.8), -4.3301270189px 2.5px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
 }
 .about__title {
   font-family: "Allan-Regular", sans-serif;
@@ -350,6 +354,38 @@ body .section-container {
   transition: transform 0.1s ease-out;
 }
 
-/* Footer */
+/* Skills */
+.skills__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skills__title {
+  font-family: "Allan-Regular", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+.skills__category {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 4rem;
+}
+.skills__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  /* visibility: hidden; */
+}
+.skills__list__title {
+  font-family: "Chillax-Semibold", sans-serif;
+}
+.skills .progress-bars {
+  width: 50%;
+}
 
 /*# sourceMappingURL=style.css.map */
