@@ -1,15 +1,29 @@
-import { navLinks, skillsList, projectsList } from "./datas.js";
+import {
+  navLinks,
+  skillsList,
+  projectsList,
+  osList,
+  softwareList,
+  utilsList,
+} from "./datas.js";
 import { rellax } from "./animations.js";
 
-const skillsListContainer = document.getElementById("skills-list");
+const utilsListContainer = document.getElementById("utils-list");
+const softwareListContainer = document.getElementById("software-list");
+const osListContainer = document.getElementById("os-list");
+const skillsListContainer = document.getElementById("technology-list");
 const navLinksContainer = document.getElementById("nav-list");
 const projectsListContainer = document.getElementById("projects-list");
 
 document.addEventListener("DOMContentLoaded", () => {
-  NavLink(navLinks);
-  SkillList(skillsList);
-  ProjectsList(projectsList);
-  TypeWriting();
+  navLink(navLinks);
+  skillLists(skillsList);
+  projectsLists(projectsList);
+  osLists(osList);
+  softwareLists(softwareList);
+  utilsLists(utilsList);
+  addProgressBars();
+  typeWriting();
   setupScrollAnimation();
   rellax();
 });
@@ -27,7 +41,7 @@ function setupScrollAnimation() {
 }
 
 /* Nav Links */
-function NavLink(links) {
+function navLink(links) {
   links.forEach((link) => {
     const li = document.createElement("li");
     li.classList.add("header__container__nav-item");
@@ -40,18 +54,100 @@ function NavLink(links) {
   });
 }
 
-/* Skills */
-function SkillList(skill) {
-  for (let i = 0; i < skillsList.length; i++) {
-    const element = skillsList[i];
+/* Skills Technology */
+function skillLists(skills) {
+  skills.forEach((skill) => {
     const li = document.createElement("li");
-    li.innerText = element;
+    li.classList.add("skill");
+    const progression = document.createElement("div");
+    progression.classList.add("progress-bars");
+    li.innerHTML = `
+      <img src="../assets/icons/${skill.icon}.svg" alt="${skill.name}" />
+      <p>${skill.name}</p>
+    `;
     skillsListContainer.appendChild(li);
-  }
+    li.appendChild(progression);
+  });
+}
+
+/* Progress */
+function addProgressBars() {
+  const allProgressBars = document.querySelectorAll(".progress-bars");
+  allProgressBars.forEach((progressBar, index) => {
+    const line = new ProgressBar.Line(progressBar, {
+      strokeWidth: 2,
+      easing: "easeInOut",
+      duration: 1400,
+      color: "#FFEA82",
+      trailColor: "#eee",
+      trailWidth: 1,
+      svgStyle: { width: "100%", height: "100%" },
+      text: {
+        style: {
+          // Text color.
+          // Default: same as stroke color (options.color)
+          color: "#999",
+          position: "absolute",
+          right: "0",
+          top: "30px",
+          padding: 0,
+          margin: 0,
+          transform: null,
+        },
+        autoStyleContainer: false,
+      },
+      from: { color: "#FFEA82" },
+      to: { color: "#ED6A5A" },
+      step: (state, line) => {
+        line.setText(Math.round(line.value() * 100) + " %");
+      },
+    });
+
+    line.animate(skillsList[index].progression);
+  });
+}
+
+/* Os List */
+function osLists(os) {
+  os.forEach((osItem) => {
+    const li = document.createElement("li");
+    li.classList.add("os");
+    li.innerHTML = `
+      <img src="../assets/icons/${osItem.icon}.svg" alt="${osItem.name}" />
+      <p>${osItem.name}</p>
+    `;
+    osListContainer.appendChild(li);
+  });
+}
+
+/* Software List */
+function softwareLists(software) {
+  softwareList.forEach((software) => {
+    const li = document.createElement("li");
+    li.classList.add("software");
+    li.innerHTML = `
+      <img src="../assets/icons/${software.icon}.svg" alt="${software.name}" />
+      <p>${software.name}</p>
+    `;
+    softwareListContainer.appendChild(li);
+  });
+}
+
+/* Utils */
+function utilsLists(utils) {
+  utils.forEach((util) => {
+    const li = document.createElement("li");
+    li.classList.add("util");
+    li.innerHTML = `
+      <img src="../assets/icons/${util.icon}.svg" alt="${util.name}" />
+      <p>${util.name}</p>
+    `;
+    utilsListContainer.appendChild(li);
+  });
 }
 
 /* Projects */
-function ProjectsList(project) {
+function projectsLists(project) {
   for (let i = 0; i < projectsList.length; i++) {
     const project = projectsList[i];
     const div = document.createElement("div");
@@ -66,7 +162,7 @@ function ProjectsList(project) {
 }
 
 /* Type Writing */
-function TypeWriting() {
+function typeWriting() {
   let typeWriting = document.querySelector(".type-writing");
   let content = typeWriting.textContent;
   typeWriting.textContent = "";

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio, Tom Bajoux</title>
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
+    <script src="node_modules/progressbar.js/dist/progressbar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <link rel="stylesheet" href="styles/style.css" />
   </head>
@@ -84,31 +85,62 @@
           </div>
         </section>
 
-        <div class="about">
-          <div class="about__content">
-            <div class="about__text">
-              <h2 class="about__title">À propos</h2>
-              <p class="about__description">
-                Passionné par le développement web, je suis actuellement en
-                formation chez OpenClassrooms pour devenir développeur web
-                junior. Je suis à la recherche d'une entreprise pour un contrat
-                d'apprentissage en alternance.
-              </p>
-            </div>
-            <div class="about__image-container">
-              <img
-                class="about__image"
-                src="assets/images/tom.webp"
-                alt="Tom Bajoux"
-              />
+        <section id="about">
+          <div class="about">
+            <div class="about__content">
+              <div class="about__text">
+                <h2 class="about__title">À propos</h2>
+                <p class="about__description">
+                  Passionné par le développement web, je suis actuellement en
+                  formation chez OpenClassrooms pour devenir développeur web
+                  junior. Je suis à la recherche d'une entreprise pour un
+                  contrat d'apprentissage en alternance.
+                </p>
+              </div>
+              <div class="about__image-container">
+                <img
+                  class="about__image"
+                  src="assets/images/tom.webp"
+                  alt="Tom Bajoux"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <section class="skills section-container" id="skills">
+          <div data-component="progress-bar" data-value="50"></div>
           <div class="skills__content">
-            <h2 class="skills__title">Compétences</h2>
-            <ul class="skills__list" id="skills-list"></ul>
+            <h2 class="skills__title">Skills</h2>
+            <div class="skills__category">
+              <div class="skills__container">
+                <h3 class="skills__list__title">Technologies</h3>
+                <div class="skills__list technologies-container">
+                  <ul
+                    class="skills__list__technology"
+                    id="technology-list"
+                  ></ul>
+                </div>
+              </div>
+              <div class="skills__container">
+                <h3 class="skills__list__title">Software</h3>
+                <div class="skills__list software-container">
+                  <ul class="skills__list__software" id="software-list"></ul>
+                </div>
+              </div>
+              <div class="skills__container">
+                <h3 class="skills__list__title">Utils</h3>
+                <div class="skills__list utils-container">
+                  <ul class="skills__list__utils" id="utils-list"></ul>
+                </div>
+              </div>
+              <div class="skills__container">
+                <h3 class="skills__list__title">OS</h3>
+                <div class="skills__list os-container">
+                  <ul class="skills__list__os" id="os-list"></ul>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

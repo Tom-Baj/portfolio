@@ -71,8 +71,7 @@
 /* Home */
 .home {
   display: flex;
-  /*   background-image: url(../assets/images/home.jpg);
- */
+  background-image: url(../assets/images/home.jpg);
   color: $platinum;
   width: $width-full;
   height: 100vh;
@@ -129,7 +128,7 @@
 
   .astronaut {
     position: absolute;
-    top: 400px;
+    top: 100px;
     right: -100px;
     width: 30%;
     height: auto;
@@ -139,11 +138,11 @@
   .moon {
     position: absolute;
     top: 100px;
-    right: 1500px;
+    right: 500px;
     width: 10%;
     height: auto;
     object-fit: cover;
-    z-index: 0;
+    z-index: 1;
   }
 
   /*   .saturne {
@@ -157,8 +156,8 @@
 
   .earth {
     position: absolute;
-    top: 700px;
-    right: 650px;
+    top: 500px;
+    right: 150px;
     width: 12%;
     height: auto;
     object-fit: cover;
@@ -171,7 +170,6 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 2rem 1rem;
 
   &__content {
     background-color: $platinum;
@@ -179,7 +177,7 @@
     font-size: 2rem;
     padding: 2rem;
     border-radius: $radius-medium;
-    width: $width-max;
+    width: $width-full;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -188,6 +186,8 @@
   &__text {
     width: $width-middle;
     @include neumorphism-shadow($shadow-depth, 330deg, 150deg);
+    padding: 1rem;
+    border-radius: $radius-medium;
   }
 
   &__title {
@@ -213,4 +213,43 @@
   }
 }
 
-/* Footer */
+/* Skills */
+.skills {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    font-family: "Allan-Regular", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  &__category {
+    width: $width-full;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    /* visibility: hidden; */
+
+    &__title {
+      font-family: "Chillax-Semibold", sans-serif;
+    }
+  }
+
+  .progress-bars {
+    width: $width-middle;
+  }
+}
