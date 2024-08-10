@@ -6,7 +6,7 @@
     <title>Portfolio, Tom Bajoux</title>
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
     <script src="node_modules/progressbar.js/dist/progressbar.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
@@ -144,7 +144,10 @@
         </section>
 
         <section class="projects section-container" id="projects">
-          <div class="projects__list" id="projects-list"></div>
+          <div class="projects-list" id="projects-list"></div>
+          <div class="card" data-tilt data-tilt-scale="1.1">
+            <h1>3D Card</h1>
+          </div>
         </section>
 
         <section class="contact section-container" id="contact">
@@ -160,7 +163,7 @@
         </section>
       </div>
 
-      <div class="main__scroll-top" id="scroll-top">
+      <!-- <div class="main__scroll-top" id="scroll-top">
         <a href="#main" class="main__scroll-top-link">
           <img
             class="main__scroll-top-icon"
@@ -168,7 +171,7 @@
             alt="scroll top"
           />
         </a>
-      </div>
+      </div> -->
     </main>
 
     <footer class="footer">
@@ -190,6 +193,9 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script type="module" src="scripts/script.js"></script>
+    <script type="module" src="scripts/vanilla-tilt.js"></script>
   </body>
 </html>

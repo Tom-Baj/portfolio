@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   typeWriting();
   setupScrollAnimation();
   rellax();
+  testCard();
 });
 
 /* Scroll Animation */
@@ -158,19 +159,52 @@ function utilsLists(utils) {
 }
 
 /* Projects */
-function projectsLists(project) {
-  for (let i = 0; i < projectsList.length; i++) {
-    const project = projectsList[i];
+function projectsLists(projects) {
+  projects.forEach((project) => {
     const div = document.createElement("div");
-    div.classList.add("project");
-    div.innerHTML = `
-      <h3>${project.title}</h3>
-      <img src="${project.image}" alt="${project.title}" />
-      <p>${project.description}</p>
-      <a href="${project.link}" target="_blank">Voir le projet</a>
-    `;
+    div.classList.add("projects-list__project");
+
+    const projectTitle = document.createElement("h3");
+    projectTitle.classList.add("projects-list__project__title");
+    projectTitle.textContent = project.title;
+
+    const projectImage = document.createElement("img");
+    projectImage.classList.add("projects-list__project__image");
+    projectTitle.textContent = project.title;
+
+    const projectDescription = document.createElement("p");
+    projectDescription.classList.add("projects-list__project__description");
+    projectDescription.textContent = project.description;
+
+    const projectLink = document.createElement("button");
+    projectLink.classList.add("projects-list__project__link");
+    projectLink.href = project.link;
+
     projectsListContainer.appendChild(div);
-  }
+    div.appendChild(projectImage);
+    projectImage.appendChild(projectTitle);
+    projectImage.appendChild(projectDescription);
+    div.appendChild(projectLink);
+
+    projectTitle.textContent = project.title;
+    projectImage.src = project.image;
+    projectImage.alt = project.title;
+    projectDescription.textContent = project.description;
+    projectLink.href = project.link;
+    projectLink.target = "_blank";
+    projectLink.textContent = "Voir le projet";
+  });
+}
+
+function testCard() {
+  const divTest = document.createElement("div");
+  divTest.classList.add("card-test");
+  divTest.innerHTML = `
+  <div class="card" data-tilt data-tilt-scale="1.1">
+            <h1>3D Card</h1>
+          </div>
+  `;
+  projectsListContainer.appendChild(divTest);
 }
 
 /* Type Writing */
