@@ -59,7 +59,9 @@ function skillLists(skills) {
   skills.forEach((skill) => {
     const li = document.createElement("li");
     li.classList.add("skill");
-    const progression = document.createElement("div");
+    const progressionContainer = document.createElement("div");
+    /*     progressionContainer.classList.add("progression-container");
+     */ const progression = document.createElement("div");
     progression.classList.add("progress-bars");
     li.innerHTML = `
       <img src="../assets/icons/${skill.icon}.svg" alt="${skill.name}" />
@@ -67,6 +69,8 @@ function skillLists(skills) {
     `;
     skillsListContainer.appendChild(li);
     li.appendChild(progression);
+    /*     progressionContainer.appendChild(progression);
+     */
   });
 }
 
@@ -77,16 +81,14 @@ function addProgressBars() {
     const line = new ProgressBar.Line(progressBar, {
       strokeWidth: 2,
       easing: "easeInOut",
-      duration: 1400,
+      duration: 2000,
       color: "#FFEA82",
       trailColor: "#eee",
       trailWidth: 1,
-      svgStyle: { width: "100%", height: "100%" },
+      svgStyle: { width: "100%", height: "20%" },
       text: {
         style: {
-          // Text color.
-          // Default: same as stroke color (options.color)
-          color: "#999",
+          color: "hsla(75, 6%, 87%, 1)",
           position: "absolute",
           right: "0",
           top: "30px",
@@ -96,13 +98,22 @@ function addProgressBars() {
         },
         autoStyleContainer: false,
       },
-      from: { color: "#FFEA82" },
-      to: { color: "#ED6A5A" },
+      from: { color: "#BC4749" },
+      to: { color: "#9add00" },
       step: (state, line) => {
+        line.path.setAttribute("stroke", state.color);
         line.setText(Math.round(line.value() * 100) + " %");
       },
     });
-
+    /*     const line = new ProgressBar.Line(progressBar, {
+      strokeWidth: 4,
+      easing: "easeInOut",
+      duration: 1400,
+      color: "#FFEA82",
+      trailColor: "#eee",
+      trailWidth: 1,
+      svgStyle: { width: "100%", height: "100%" },
+    }); */
     line.animate(skillsList[index].progression);
   });
 }
@@ -154,6 +165,7 @@ function projectsLists(project) {
     div.classList.add("project");
     div.innerHTML = `
       <h3>${project.title}</h3>
+      <img src="${project.image}" alt="${project.title}" />
       <p>${project.description}</p>
       <a href="${project.link}" target="_blank">Voir le projet</a>
     `;

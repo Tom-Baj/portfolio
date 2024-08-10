@@ -3,9 +3,11 @@ body {
   font-family: "Chillax-Regular", sans-serif;
   color: $platinum;
   max-width: 100vw;
+  background-image: url(../assets/images/a.webp);
+
   /*   background-color: $background-color;
  */
-  background: rgb(37, 28, 107);
+  /*   background: rgb(37, 28, 107);
   background: linear-gradient(
     0deg,
     rgba(37, 28, 107, 1) 0%,
@@ -15,7 +17,7 @@ body {
     rgba(25, 19, 63, 1) 70%,
     rgba(22, 16, 54, 1) 85%,
     rgba(14, 11, 26, 1) 100%
-  );
+  ); */
 
   /* Links */
   a {
@@ -24,13 +26,10 @@ body {
   }
 
   /* Section */
-  .section-container {
+  /*   .section-container {
     margin: 0 auto;
     height: 100vh;
-  }
+  } */
 
   /* Skills */
-  .skills {
-    background-color: $background-color-light;
-  }
 }
