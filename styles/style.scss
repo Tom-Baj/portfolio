@@ -5,6 +5,8 @@
 @import "typography";
 @import "animations";
 
+.main
+
 /* Header */
 #header {
   position: sticky;
@@ -71,7 +73,8 @@
 /* Home */
 .home {
   display: flex;
-  background-image: url(../assets/images/home.jpg);
+  /*   background-image: url(../assets/images/home.jpg);
+ */
   color: $platinum;
   width: $width-full;
   height: 100vh;
@@ -216,6 +219,10 @@
 /* Skills */
 .skills {
   &__content {
+    background-color: $background-color-light;
+    margin: 5rem auto;
+    width: $width-max;
+    padding: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -231,6 +238,7 @@
   &__category {
     width: $width-full;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     gap: 4rem;
@@ -244,12 +252,32 @@
     gap: 2rem;
     /* visibility: hidden; */
 
+    &__technology {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
     &__title {
       font-family: "Chillax-Semibold", sans-serif;
     }
   }
 
+  .skill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*   .progression-container {
+    width: $width-middle;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  } */
+
   .progress-bars {
     width: $width-middle;
+    position: relative;
   }
 }

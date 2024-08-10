@@ -10,41 +10,49 @@ export const skillsList = [
   {
     name: "HTML",
     icon: "html5",
+    pourcentage: "90%",
     progression: 0.9,
   },
   {
     name: "CSS",
     icon: "css3",
+    pourcentage: "80%",
     progression: 0.8,
   },
   {
     name: "Sass",
     icon: "sass",
+    pourcentage: "80%",
     progression: 0.8,
   },
   {
     name: "Javascript",
     icon: "javascript",
+    pourcentage: "70%",
     progression: 0.7,
   },
   {
     name: "React",
     icon: "react",
+    pourcentage: "70%",
     progression: 0.7,
   },
   {
     name: "NodeJs",
     icon: "nodejs",
+    pourcentage: "60%",
     progression: 0.6,
   },
   {
     name: "Express",
     icon: "express",
+    pourcentage: "60%",
     progression: 0.6,
   },
   {
     name: "MongoDB",
     icon: "mongodb",
+    pourcentage: "60%",
     progression: 0.6,
   },
 ];
@@ -66,7 +74,7 @@ export const osList = [
 
 export const softwareList = [
   {
-    name: "Visual Studio Code",
+    name: "VSCode",
     icon: "vscode",
   },
   {
@@ -104,22 +112,24 @@ export const utilsList = [
 
 export const projectsList = [
   {
-    id: "vieux-grimoire",
-    title: "Vieux Grimoire",
-    description: "Site de vente de livres anciens",
-    link: "https://vieux-grimoire.netlify.app/",
+    id: "architecte",
+    title: "Sophie Bluel, Architecte d'intérieur",
+    description: "Portfolio d'une architecte d'intérieur",
+    link: "https://tom-baj.github.io/portfolio-architecte/FrontEnd/",
   },
   {
-    id: "portfolio",
-    title: "Portfolio",
-    description: "Site de présentation de mes projets",
-    link: "https://portfolio-romain.netlify.app/",
+    id: "booki",
+    title: "Agence de voyage, Booki",
+    description: "Site de location de vacances",
+    image: "../assets/images/projets/booki.png",
+    link: "https://tom-baj.github.io/agence-de-voyage/",
   },
   {
-    id: "todo",
-    title: "Todo List",
-    description: "Application de gestion de tâches",
-    link: "https://todo-romain.netlify.app/",
+    id: "kasa",
+    title: "Kasa Location Immobilière",
+    description: "Application de location immobilière",
+    image: "../assets/images/projets/kasa.png",
+    link: "https://kasa-location-immobiliere-alpha.vercel.app/",
   },
   {
     id: "weather",
