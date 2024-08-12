@@ -6,6 +6,7 @@ import {
   softwareList,
   utilsList,
 } from "./datas.js";
+
 import { rellax } from "./animations.js";
 
 const utilsListContainer = document.getElementById("utils-list");
@@ -14,6 +15,7 @@ const osListContainer = document.getElementById("os-list");
 const skillsListContainer = document.getElementById("technology-list");
 const navLinksContainer = document.getElementById("nav-list");
 const projectsListContainer = document.getElementById("projects-list");
+const socialLinksContainer = document.getElementById("social-links");
 
 document.addEventListener("DOMContentLoaded", () => {
   navLink(navLinks);
@@ -25,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   addProgressBars();
   typeWriting();
   setupScrollAnimation();
+  setupSkillsSectionToggle();
   rellax();
-  testCard();
 });
 
 /* Scroll Animation */
@@ -61,8 +63,7 @@ function skillLists(skills) {
     const li = document.createElement("li");
     li.classList.add("skill");
     const progressionContainer = document.createElement("div");
-    /*     progressionContainer.classList.add("progression-container");
-     */ const progression = document.createElement("div");
+    const progression = document.createElement("div");
     progression.classList.add("progress-bars");
     li.innerHTML = `
       <img src="../assets/icons/${skill.icon}.svg" alt="${skill.name}" />
@@ -70,12 +71,10 @@ function skillLists(skills) {
     `;
     skillsListContainer.appendChild(li);
     li.appendChild(progression);
-    /*     progressionContainer.appendChild(progression);
-     */
   });
 }
 
-/* Progress */
+/* Progress bar*/
 function addProgressBars() {
   const allProgressBars = document.querySelectorAll(".progress-bars");
   allProgressBars.forEach((progressBar, index) => {
@@ -106,15 +105,6 @@ function addProgressBars() {
         line.setText(Math.round(line.value() * 100) + " %");
       },
     });
-    /*     const line = new ProgressBar.Line(progressBar, {
-      strokeWidth: 4,
-      easing: "easeInOut",
-      duration: 1400,
-      color: "#FFEA82",
-      trailColor: "#eee",
-      trailWidth: 1,
-      svgStyle: { width: "100%", height: "100%" },
-    }); */
     line.animate(skillsList[index].progression);
   });
 }
@@ -162,7 +152,7 @@ function utilsLists(utils) {
 function projectsLists(projects) {
   projects.forEach((project) => {
     const div = document.createElement("div");
-    div.classList.add("projects-list__project");
+    div.classList.add("projects-list__project", `project-${project.id}`);
 
     const projectTitle = document.createElement("h3");
     projectTitle.classList.add("projects-list__project__title");
@@ -196,17 +186,6 @@ function projectsLists(projects) {
   });
 }
 
-function testCard() {
-  const divTest = document.createElement("div");
-  divTest.classList.add("card-test");
-  divTest.innerHTML = `
-  <div class="card" data-tilt data-tilt-scale="1.1">
-            <h1>3D Card</h1>
-          </div>
-  `;
-  projectsListContainer.appendChild(divTest);
-}
-
 /* Type Writing */
 function typeWriting() {
   let typeWriting = document.querySelector(".type-writing");
@@ -224,4 +203,25 @@ function typeWriting() {
       typeWriting.classList.add("slow-cursor");
     }
   }, 150);
+}
+
+/* Afficher les outils */
+function setupSkillsSectionToggle() {
+  const buttons = document.querySelectorAll(".skills__nav__list button");
+  const sections = document.querySelectorAll(".skills__tools__container");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const sectionToShow = event.target.getAttribute("data-section");
+
+      sections.forEach((section) => {
+        section.classList.remove("active");
+      });
+
+      const section = document.querySelector(`.${sectionToShow}-container`);
+      if (section) {
+        section.classList.add("active");
+      }
+    });
+  });
 }

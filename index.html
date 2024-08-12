@@ -30,8 +30,7 @@
       </div>
     </header>
 
-    <!--   <body>
-    <div class="loader" id="loader">
+    <!-- <div class="loader" id="loader">
       <div class="loader__spinner"></div>
     </div> -->
 
@@ -42,7 +41,7 @@
             <div class="home__image-container">
               <img
                 class="home__image-container--image ordinateur"
-                src="/assets/images/computer.png"
+                src="/assets/images/computer.webp"
                 alt="ordinateur"
               />
             </div>
@@ -60,13 +59,13 @@
               <img
                 class="rellax astronaut"
                 data-rellax-speed="3"
-                src="./assets/images/astronaut.png"
+                src="./assets/images/astronaut.webp"
                 alt="astronaut"
               />
               <img
                 class="rellax moon"
-                data-rellax-speed="-20"
-                src="./assets/images/moon.png"
+                data-rellax-speed="-10"
+                src="./assets/images/moon.webp"
                 alt="moon"
               />
               <img
@@ -97,7 +96,12 @@
                   contrat d'apprentissage en alternance.
                 </p>
               </div>
-              <div class="about__image-container">
+              <div
+                class="about__image-container"
+                data-tilt
+                data-tilt-max="25"
+                data-tilt-speed="400"
+              >
                 <img
                   class="about__image"
                   src="assets/images/tom.webp"
@@ -114,29 +118,62 @@
             <div class="skills__category">
               <div class="skills__container">
                 <h3 class="skills__list__title">Technologies</h3>
-                <div class="technologies-container">
+                <div class="technology-container">
                   <ul class="skills__list" id="technology-list"></ul>
                 </div>
               </div>
 
-              <div class="skills__container">
-                <h3 class="skills__list__title">Utils</h3>
-                <div class="utils-container">
-                  <ul class="skills__list" id="utils-list"></ul>
-                </div>
+              <div class="skills__container-list">
+                <input class="skills__input" type="checkbox" id="toggle" />
+                <label class="skills__button" for="toggle"></label>
+
+                <nav class="skills__nav">
+                  <ul class="skills__nav__list">
+                    <li>
+                      <button class="skills__nav__list--os" data-section="os">
+                        OS
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="skills__nav__list--utils"
+                        data-section="utils"
+                      >
+                        Utils
+                      </button>
+                    </li>
+                    <li>
+                      <button
+                        class="skills__nav__list--software"
+                        data-section="software"
+                      >
+                        Software
+                      </button>
+                    </li>
+                  </ul>
+                </nav>
               </div>
 
-              <div class="skills__container">
-                <h3 class="skills__list__title">Software</h3>
-                <div class="software-container">
-                  <ul class="skills__list" id="software-list"></ul>
+              <div class="skills__tools">
+                <div class="skills__tools__container os-container">
+                  <h3 class="skills__tools__list__title">OS</h3>
+                  <div class="os-container">
+                    <ul class="skills__tools__list" id="os-list"></ul>
+                  </div>
                 </div>
-              </div>
 
-              <div class="skills__container">
-                <h3 class="skills__list__title">OS</h3>
-                <div class="os-container">
-                  <ul class="skills__list" id="os-list"></ul>
+                <div class="skills__tools__container utils-container">
+                  <h3 class="skills__tools__list__title">Utils</h3>
+                  <div class="utils-container">
+                    <ul class="skills__tools__list" id="utils-list"></ul>
+                  </div>
+                </div>
+
+                <div class="skills__tools__container software-container">
+                  <h3 class="skills__tools__list__title">Software</h3>
+                  <div class="software-container">
+                    <ul class="skills__tools__list" id="software-list"></ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -145,9 +182,6 @@
 
         <section class="projects section-container" id="projects">
           <div class="projects-list" id="projects-list"></div>
-          <div class="card" data-tilt data-tilt-scale="1.1">
-            <h1>3D Card</h1>
-          </div>
         </section>
 
         <section class="contact section-container" id="contact">
@@ -193,6 +227,7 @@
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script type="module" src="scripts/script.js"></script>
