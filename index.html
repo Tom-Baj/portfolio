@@ -58,7 +58,7 @@
             <div class="home__image-container--image-bg-container">
               <img
                 class="rellax astronaut"
-                data-rellax-speed="3"
+                data-rellax-speed="5"
                 src="./assets/images/astronaut.webp"
                 alt="astronaut"
               />
@@ -123,57 +123,40 @@
                 </div>
               </div>
 
-              <div class="skills__container-list">
-                <input class="skills__input" type="checkbox" id="toggle" />
-                <label class="skills__button" for="toggle"></label>
-
-                <nav class="skills__nav">
-                  <ul class="skills__nav__list">
-                    <li>
-                      <button class="skills__nav__list--os" data-section="os">
-                        OS
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="skills__nav__list--utils"
-                        data-section="utils"
-                      >
-                        Utils
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        class="skills__nav__list--software"
-                        data-section="software"
-                      >
-                        Software
-                      </button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-
-              <div class="skills__tools">
-                <div class="skills__tools__container os-container">
-                  <h3 class="skills__tools__list__title">OS</h3>
-                  <div class="os-container">
-                    <ul class="skills__tools__list" id="os-list"></ul>
-                  </div>
+              <div class="skills__nav__list" id="skills-nav-list"></div>
+              <div class="skills skills--tools">
+                <div
+                  class="skills__container skills__container--tools skills__container--os"
+                >
+                  <h3 class="skills__list__title skills__list__title--tools">
+                    OS
+                  </h3>
+                  <div
+                    class="skills__list skills__list--tools"
+                    id="os-list"
+                  ></div>
                 </div>
-
-                <div class="skills__tools__container utils-container">
-                  <h3 class="skills__tools__list__title">Utils</h3>
-                  <div class="utils-container">
-                    <ul class="skills__tools__list" id="utils-list"></ul>
-                  </div>
+                <div
+                  class="skills__container skills__container--tools skills__container--utils"
+                >
+                  <h3 class="skills__list__title skills__list__title--tools">
+                    Utils
+                  </h3>
+                  <div
+                    class="skills__list skills__list--tools"
+                    id="utils-list"
+                  ></div>
                 </div>
-
-                <div class="skills__tools__container software-container">
-                  <h3 class="skills__tools__list__title">Software</h3>
-                  <div class="software-container">
-                    <ul class="skills__tools__list" id="software-list"></ul>
-                  </div>
+                <div
+                  class="skills__container skills__container--tools skills__container--software"
+                >
+                  <h3 class="skills__list__title skills__list__title--tools">
+                    Software
+                  </h3>
+                  <div
+                    class="skills__list skills__list--tools"
+                    id="software-list"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -181,6 +164,9 @@
         </section>
 
         <section class="projects section-container" id="projects">
+          <div class="projects__content">
+            <h2 class="projects__title">Projets</h2>
+          </div>
           <div class="projects-list" id="projects-list"></div>
         </section>
 
@@ -230,6 +216,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
     <script type="module" src="scripts/script.js"></script>
     <script type="module" src="scripts/vanilla-tilt.js"></script>
   </body>
