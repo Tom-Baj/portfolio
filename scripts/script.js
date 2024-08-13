@@ -7,7 +7,7 @@ import {
   utilsList,
 } from "./datas.js";
 
-import { rellax } from "./animations.js";
+import { headerScrolled, rellax } from "./animations.js";
 
 const utilsListContainer = document.getElementById("utils-list");
 const softwareListContainer = document.getElementById("software-list");
@@ -29,7 +29,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollAnimation();
   setupSkillsSectionToggle();
   rellax();
+  headerScrolled();
 });
+
+/* Change Header Appearance on Scroll */
+function headerToggle() {
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  });
+}
 
 /* Scroll Animation */
 function setupScrollAnimation() {
@@ -149,10 +163,11 @@ function utilsLists(utils) {
 }
 
 /* Projects */
-function projectsLists(projects) {
+/* function projectsLists(projects) {
   projects.forEach((project) => {
     const div = document.createElement("div");
-    div.classList.add("projects-list__project", `project-${project.id}`);
+    div.classList.add("projects-list__project");
+    div.id = project.id;
 
     const projectTitle = document.createElement("h3");
     projectTitle.classList.add("projects-list__project__title");
@@ -174,7 +189,8 @@ function projectsLists(projects) {
     div.appendChild(projectImage);
     projectImage.appendChild(projectTitle);
     projectImage.appendChild(projectDescription);
-    div.appendChild(projectLink);
+    projectImage.appendChild(projectLink);
+    div.appendChild(projectTitle);
 
     projectTitle.textContent = project.title;
     projectImage.src = project.image;
@@ -183,6 +199,48 @@ function projectsLists(projects) {
     projectLink.href = project.link;
     projectLink.target = "_blank";
     projectLink.textContent = "Voir le projet";
+  });
+} */
+
+function projectsLists(projects) {
+  projects.forEach((project) => {
+    const div = document.createElement("div");
+    div.classList.add("projects-list__project");
+    div.id = project.id;
+
+    const projectTitle = document.createElement("h3");
+    projectTitle.classList.add("projects-list__project__title");
+    projectTitle.textContent = project.title;
+
+    const projectImage = document.createElement("img");
+    projectImage.classList.add("projects-list__project__image");
+
+    const projectDescription = document.createElement("p");
+    projectDescription.classList.add("projects-list__project__description");
+    projectDescription.textContent = project.description;
+
+    const projectLink = document.createElement("a");
+    projectLink.classList.add("projects-list__project__link");
+    projectLink.href = project.link;
+    projectLink.target = "_blank";
+    projectLink.textContent = "Voir le projet";
+
+    div.appendChild(projectImage);
+    div.appendChild(projectTitle);
+    div.appendChild(projectDescription);
+    div.appendChild(projectLink);
+
+    projectsListContainer.appendChild(div);
+
+    projectImage.src = project.image;
+    projectImage.alt = project.title;
+  });
+
+  // Initialisation de Masonry après l'ajout des projets
+  new Masonry("#projects-list", {
+    itemSelector: ".projects-list__project",
+    columnWidth: ".projects-list__project",
+    percentPosition: true,
   });
 }
 
@@ -203,25 +261,4 @@ function typeWriting() {
       typeWriting.classList.add("slow-cursor");
     }
   }, 150);
-}
-
-/* Afficher les outils */
-function setupSkillsSectionToggle() {
-  const buttons = document.querySelectorAll(".skills__nav__list button");
-  const sections = document.querySelectorAll(".skills__tools__container");
-
-  buttons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const sectionToShow = event.target.getAttribute("data-section");
-
-      sections.forEach((section) => {
-        section.classList.remove("active");
-      });
-
-      const section = document.querySelector(`.${sectionToShow}-container`);
-      if (section) {
-        section.classList.add("active");
-      }
-    });
-  });
 }
