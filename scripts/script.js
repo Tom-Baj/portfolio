@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
   addProgressBars();
   typeWriting();
   setupScrollAnimation();
-  setupSkillsSectionToggle();
   rellax();
   headerScrolled();
 });
