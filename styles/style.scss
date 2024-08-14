@@ -13,6 +13,7 @@
   width: 100%;
   z-index: 1000;
   padding: 0.5rem 0;
+  height: 200px;
 
   &__container {
     display: flex;
@@ -153,14 +154,14 @@
     z-index: 2;
   }
 
-  /*   .saturne {
+  .saturne {
     position: absolute;
     top: 300px;
-    right: 1600px;
-    width: 18%;
+    right: 600px;
+    width: 25%;
     height: auto;
     object-fit: cover;
-  } */
+  }
 
   .earth {
     position: absolute;
@@ -307,13 +308,13 @@
     position: relative;
   }
 
-  &__tools {
+  &--tools {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
     flex-wrap: wrap;
-    width: $width-full;
-    margin-top: 3rem;
+    margin: auto;
+    gap: 3rem;
 
     &__container {
       display: flex;
@@ -331,6 +332,19 @@
       justify-content: center;
       align-items: center;
       gap: 1rem;
+
+      &__title {
+        font-family: "Chillax-Semibold", sans-serif;
+        margin-bottom: 25px;
+        text-align: start;
+      }
+    }
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
   /*   &__tools {
@@ -447,56 +461,122 @@
 }
 
 /* Projects */
-.projects-list {
-  /*   display: flex;
- */
-  flex-wrap: wrap;
+.projects {
+  min-height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  flex-direction: column;
   margin: 0 auto;
-  width: $width-full;
 
-  &__project {
-    /*     width: 300px;
- */
-    margin-bottom: 20px;
-    background-color: $background-color-light;
-    border-radius: $radius-medium;
-    @include neumorphism-shadow($shadow-depth, 330deg, 150deg);
+  &__title {
+    font-family: "Allan-Regular", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+  }
+
+  .projects-list {
+    width: $width-max;
+
+    &__project {
+      margin: 1rem;
+      border-radius: $radius-medium;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transform-style: preserve-3d;
+      background-color: hsl(252, 59%, 18%);
+      box-shadow: -4.3301270189px -2.5px 5px rgba(255, 255, 255, 0.8),
+        -4.3301270189px 2.5px 5px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: rotateY(10deg) translateZ(20px);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        transition: opacity 0.3s ease;
+      }
+
+      &:hover .overlay {
+        opacity: 1;
+      }
+
+      &:hover {
+        background-color: transparent;
+        border: none;
+      }
+
+      &__image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: $radius-medium;
+      }
+
+      &--large {
+        width: 30%;
+      }
+
+      &--high {
+        width: 20%;
+      }
+
+      &--big {
+        width: 25%;
+      }
+
+      &--small {
+        width: 15%;
+      }
+    }
+  }
+}
+
+/* Footer  */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background-color;
+  color: $platinum;
+  height: 100px;
+  font-size: 1rem;
+  font-family: "Chillax-Variable", sans-serif;
+  position: relative;
+  z-index: 1000;
+
+  &__container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    width: $width-full;
+    padding: 0 20px;
+  }
+
+  &__social {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+  }
 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform-style: preserve-3d;
+  &__social-link {
+    color: $platinum;
+    font-size: 1.5rem;
+  }
 
-    &:hover {
-      transform: rotateY(10deg) translateZ(20px);
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      transition: opacity 0.3s ease;
-    }
-
-    &:hover .overlay {
-      opacity: 1;
-    }
+  &__social-link:hover {
+    color: $light-sky-blue;
   }
 }
