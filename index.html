@@ -46,7 +46,7 @@
               />
             </div>
 
-            <div class="home__content">
+            <div class="rellax home__content" data-rellax-speed="-3">
               <h1 class="home__title">
                 Bonjour,<br />
                 Je suis Tom Bajoux. <br />
@@ -58,13 +58,14 @@
             <div class="home__image-container--image-bg-container">
               <img
                 class="rellax astronaut"
-                data-rellax-speed="5"
+                data-rellax-speed="-5"
                 src="./assets/images/astronaut.webp"
                 alt="astronaut"
               />
               <img
                 class="rellax moon"
-                data-rellax-speed="-10"
+                data-rellax-speed="-3"
+                data-rellax-vertical-scroll-axis="x"
                 src="./assets/images/moon.webp"
                 alt="moon"
               />
@@ -72,14 +73,15 @@
                 src="./assets/images/earth.webp"
                 alt="earth"
                 class="rellax earth"
-                data-rellax-speed="11"
+                data-rellax-vertical-scroll-axis="xy"
+                data-rellax-speed="6"
               />
-              <!-- <img
-              src="./assets/images/saturne.webp"
-              alt="saturne"
-              class="rellax saturne"
-              data-rellax-speed="-10"
-            /> -->
+              <img
+                src="./assets/images/saturne.webp"
+                alt="saturne"
+                class="rellax saturne"
+                data-rellax-speed="4"
+              />
             </div>
           </div>
         </section>
@@ -90,10 +92,10 @@
               <div class="about__text">
                 <h2 class="about__title">À propos</h2>
                 <p class="about__description">
-                  Passionné par le développement web, je suis actuellement en
-                  formation chez OpenClassrooms pour devenir développeur web
-                  junior. Je suis à la recherche d'une entreprise pour un
-                  contrat d'apprentissage en alternance.
+                  Ancien coiffeur et barbier, j'ai choisi de me reconvertir dans
+                  le développement web, une passion de longue date. Actuellement
+                  en formation "Développeur Web" chez OpenClassrooms, je me
+                  prépare à devenir développeur web junior.
                 </p>
               </div>
               <div
@@ -122,39 +124,44 @@
                   <ul class="skills__list" id="technology-list"></ul>
                 </div>
               </div>
-
               <div class="skills__nav__list" id="skills-nav-list"></div>
               <div class="skills skills--tools">
                 <div
-                  class="skills__container skills__container--tools skills__container--os"
+                  class="skills--tools__container skills--tools__container--tools skills--tools__container--os"
                 >
-                  <h3 class="skills__list__title skills__list__title--tools">
+                  <h3
+                    class="skills--tools__list__title skills--tools__list__title--tools"
+                  >
                     OS
                   </h3>
                   <div
-                    class="skills__list skills__list--tools"
+                    class="skills--tools__list skills--tools__list--tools"
                     id="os-list"
                   ></div>
                 </div>
                 <div
-                  class="skills__container skills__container--tools skills__container--utils"
+                  class="skills--tools__container skills--tools__container--tools skills--tools__container--utils"
                 >
-                  <h3 class="skills__list__title skills__list__title--tools">
+                  <h3
+                    class="skills--tools__list__title skills--tools__list__title--tools"
+                  >
                     Utils
                   </h3>
                   <div
-                    class="skills__list skills__list--tools"
+                    class="skills--tools__list skills--tools__list--tools"
                     id="utils-list"
                   ></div>
                 </div>
                 <div
-                  class="skills__container skills__container--tools skills__container--software"
+                  class="skills--tools__container skills--tools__container--tools skills--tools__container--software"
                 >
-                  <h3 class="skills__list__title skills__list__title--tools">
+                  <h3
+                    class="skills--tools__list__title skills--tools__list__title--tools"
+                  >
                     Software
                   </h3>
                   <div
-                    class="skills__list skills__list--tools"
+                    class="skills--tools__list skills--tools__list--tools"
                     id="software-list"
                   ></div>
                 </div>
@@ -215,9 +222,8 @@
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.2/dist/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
     <script type="module" src="scripts/script.js"></script>
-    <script type="module" src="scripts/vanilla-tilt.js"></script>
   </body>
 </html>

@@ -7,7 +7,7 @@ import {
   utilsList,
 } from "./datas.js";
 
-import { headerScrolled, rellax } from "./animations.js";
+import { headerScrolled, rellax, initTilt } from "./animations.js";
 
 const utilsListContainer = document.getElementById("utils-list");
 const softwareListContainer = document.getElementById("software-list");
@@ -16,11 +16,12 @@ const skillsListContainer = document.getElementById("technology-list");
 const navLinksContainer = document.getElementById("nav-list");
 const projectsListContainer = document.getElementById("projects-list");
 const socialLinksContainer = document.getElementById("social-links");
+const grid = document.querySelector(".projects-list");
 
 document.addEventListener("DOMContentLoaded", () => {
   navLink(navLinks);
   skillLists(skillsList);
-  projectsLists(projectsList);
+  createProjects(projectsList);
   osLists(osList);
   softwareLists(softwareList);
   utilsLists(utilsList);
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupScrollAnimation();
   rellax();
   headerScrolled();
+  afficherProjets();
 });
 
 /* Change Header Appearance on Scroll */
@@ -201,45 +203,43 @@ function utilsLists(utils) {
   });
 } */
 
-function projectsLists(projects) {
+function createProjects(projects) {
   projects.forEach((project) => {
     const div = document.createElement("div");
-    div.classList.add("projects-list__project");
+    div.classList.add(
+      "projects-list__project",
+      `projects-list__project${project.size}`,
+      "project"
+    );
     div.id = project.id;
-
-    const projectTitle = document.createElement("h3");
-    projectTitle.classList.add("projects-list__project__title");
-    projectTitle.textContent = project.title;
 
     const projectImage = document.createElement("img");
     projectImage.classList.add("projects-list__project__image");
-
-    const projectDescription = document.createElement("p");
-    projectDescription.classList.add("projects-list__project__description");
-    projectDescription.textContent = project.description;
-
-    const projectLink = document.createElement("a");
-    projectLink.classList.add("projects-list__project__link");
-    projectLink.href = project.link;
-    projectLink.target = "_blank";
-    projectLink.textContent = "Voir le projet";
-
-    div.appendChild(projectImage);
-    div.appendChild(projectTitle);
-    div.appendChild(projectDescription);
-    div.appendChild(projectLink);
+    projectImage.alt = project.title;
+    projectImage.src = project.image;
 
     projectsListContainer.appendChild(div);
+    div.appendChild(projectImage);
 
-    projectImage.src = project.image;
-    projectImage.alt = project.title;
+    // Initialisation de Masonry après l'ajout des projets
+    imagesLoaded(grid, function () {
+      new Masonry(grid, {
+        itemSelector: ".projects-list__project",
+        columnWidth: 25,
+        percentPosition: true,
+      });
+    });
   });
+}
 
-  // Initialisation de Masonry après l'ajout des projets
-  new Masonry("#projects-list", {
-    itemSelector: ".projects-list__project",
-    columnWidth: ".projects-list__project",
-    percentPosition: true,
+function createProjectContent(projet) {}
+
+/* const projectModal
+ */
+function afficherProjets(project) {
+  const allProjects = document.querySelectorAll(".projects-list__project");
+  allProjects.forEach((project) => {
+    console.log(project.id);
   });
 }
 
