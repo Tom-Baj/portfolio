@@ -218,28 +218,67 @@ function createProjects(projects) {
     projectImage.alt = project.title;
     projectImage.src = project.image;
 
+    const projectOverlay = document.createElement("div");
+    projectOverlay.classList.add("overlay");
+
+    const projectTitle = document.createElement("h3");
+    projectTitle.classList.add("overlay__title");
+    projectTitle.textContent = project.title;
+
     projectsListContainer.appendChild(div);
     div.appendChild(projectImage);
+    div.appendChild(projectOverlay);
+    projectOverlay.appendChild(projectTitle);
 
     // Initialisation de Masonry après l'ajout des projets
     imagesLoaded(grid, function () {
       new Masonry(grid, {
         itemSelector: ".projects-list__project",
-        columnWidth: 25,
         percentPosition: true,
+        columnWidth: ".projects-list__project",
+        stagger: 30,
+        gutter: 10,
       });
     });
   });
 }
 
-function createProjectContent(projet) {}
+function createProjectContent(projectsList) {
+  const projectContent = document.createElement("div");
+  projectContent.classlist.add("project-content");
 
-/* const projectModal
- */
+  const projectTitle = document.createElement("h3");
+  projectTitle.classList.add("projects-content__title");
+  projectTitle.textContent = project.title;
+
+  const projectDescription = document.createElement("p");
+  projectDescription.classlist.add("project-content__description");
+  projectDescription.textContent = project.description;
+
+  const projectRole = document.createElement("p");
+  projectRole.classlist.add("project-content__role");
+  projectRole.textContent = project.role;
+
+  const projectLinks = document.createElement("div");
+  projectLinks.classlist.add("project-content__links");
+
+  const projectLink = document.createElement("a");
+  projectLink.classlist.add("project-content__link");
+  projectLink.href = project.link;
+
+  const projectCode = document.createElement("a");
+  projectCode.classlist.add("project-content__code");
+  projectCode.href = project.code;
+}
+
+/* const projectModal */
 function afficherProjets(project) {
   const allProjects = document.querySelectorAll(".projects-list__project");
   allProjects.forEach((project) => {
-    console.log(project.id);
+    project.addEventListener("click", () => {
+      project.classList.add("active");
+      console.log(project.id);
+    });
   });
 }
 
