@@ -23,12 +23,8 @@ function initTilt() {
   const elements = document.querySelectorAll("[data-tilt]");
   VanillaTilt.init(elements, {
     max: 35,
-    speed: 1000,
+    speed: 400,
     perspective: 1000,
-    scale: 1.1,
-    reverse: true,
-    glare: true,
-    "max-glare": 0.5,
   });
 }
 
@@ -88,5 +84,24 @@ function scrollAnimation() {
     image.style.transform = `rotate(${rotation}deg)`;
   });
 }
+
+function initSubtleTilt() {
+  const subtleTiltElement = document.querySelector(".about__image-container");
+
+  if (subtleTiltElement) {
+    VanillaTilt.init(subtleTiltElement, {
+      max: 10, // Angle d'inclinaison réduit
+      speed: 600, // Vitesse plus lente
+      scale: 1.02, // Légère mise à l'échelle pour un effet subtil
+      glare: false, // Pas d'effet de reflet (glare) pour un rendu plus sobre
+      "max-glare": 0, // Désactiver le glare si vous l'avez configuré ailleurs
+      easing: "cubic-bezier(.03,.98,.52,.99)", // Adoucir l'animation avec une courbe d'accélération
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  initSubtleTilt(); // Initialisation spécifique pour cet élément
+});
 
 export { headerScrolled, rellax, initTilt, typeWriting, scrollAnimation };
