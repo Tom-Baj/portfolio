@@ -182,3 +182,24 @@ export const projectsList = [
     code: "https://github.com/Tom-Baj/agence-de-voyage.git",
   },
 ];
+
+export const socialLinks = [
+  {
+    id: "linkedin",
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/in/tom-baj",
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    icon: "github",
+    link: "https://github.com/Tom-Baj",
+  },
+  {
+    id: "twitter",
+    name: "Twitter",
+    icon: "twitter",
+    link: "https://twitter.com/BajouxTom",
+  },
+];

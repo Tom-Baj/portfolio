@@ -4,6 +4,8 @@ $background-color: hsla(264, 38%, 5%, 1);
 $purple: #8974fb;
 $light-purple: #c784dd;
 $background-color-light: hsla(252, 59%, 18%, 1);
+$primary: #11998e;
+$secondary: #38ef7d;
 
 /* Blue Palette */
 $blue-dark: hsla(210, 40%, 18%, 1);
@@ -52,3 +54,13 @@ $dark-shadow-color: rgba(0, 0, 0, 0.2);
 
 /* Profondeur de l'ombre */
 $shadow-depth: 5px;
+
+/* _variables.scss */
+
+$stars-color: #fff;
+$stars-small-count: 700;
+$stars-medium-count: 200;
+$stars-large-count: 100;
+$stars-animation-duration-small: 50s;
+$stars-animation-duration-medium: 100s;
+$stars-animation-duration-large: 150s;

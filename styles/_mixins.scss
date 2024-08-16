@@ -17,3 +17,31 @@
       $light-shadow-color,
     #{$dark-shadow-x} #{$dark-shadow-y} $shadow-depth $dark-shadow-color;
 }
+
+/* _mixins.scss */
+
+@function multiple-box-shadow($n, $color) {
+  $value: "#{random(2000)}px #{random(2000)}px #{$color}";
+  @for $i from 2 through $n {
+    $value: "#{$value}, #{random(2000)}px #{random(2000)}px #{$color}";
+  }
+  @return unquote($value);
+}
+
+@mixin generate-stars($star-size, $star-count, $animation-duration) {
+  width: $star-size;
+  height: $star-size;
+  background: transparent;
+  box-shadow: multiple-box-shadow($star-count, $stars-color);
+  animation: animStar $animation-duration linear infinite;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2000px;
+    width: $star-size;
+    height: $star-size;
+    background: transparent;
+    box-shadow: multiple-box-shadow($star-count, $stars-color);
+  }
+}
