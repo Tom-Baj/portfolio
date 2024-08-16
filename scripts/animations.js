@@ -6,11 +6,14 @@ function rellax() {
 
 function headerScrolled() {
   const header = document.querySelector("header");
+  const headerLogo = document.querySelector(".header__container__logo");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
       header.classList.add("scrolled");
+      headerLogo.classList.add("hidden");
     } else {
       header.classList.remove("scrolled");
+      headerLogo.classList.remove("hidden");
     }
   });
 }

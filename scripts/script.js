@@ -5,6 +5,7 @@ import {
   osList,
   softwareList,
   utilsList,
+  socialLinks,
 } from "./datas.js";
 
 import { headerScrolled, rellax, initTilt } from "./animations.js";
@@ -15,7 +16,8 @@ const osListContainer = document.getElementById("os-list");
 const skillsListContainer = document.getElementById("technology-list");
 const navLinksContainer = document.getElementById("nav-list");
 const projectsListContainer = document.getElementById("projects-list");
-const socialLinksContainer = document.getElementById("social-links");
+const socialLinksContainer = document.querySelector(".social-links"); // Correction ici
+
 const grid = document.querySelector(".projects-list");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,12 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
   osLists(osList);
   softwareLists(softwareList);
   utilsLists(utilsList);
-  addProgressBars();
-  typeWriting();
+  /*   progressBar();
+   */ typeWriting();
   setupScrollAnimation();
   rellax();
   headerScrolled();
   afficherProjets();
+  populateSocialLinks(socialLinks); // Correction ici
 });
 
 /* Change Header Appearance on Scroll */
@@ -90,7 +93,7 @@ function skillLists(skills) {
 }
 
 /* Progress bar*/
-function addProgressBars() {
+function progressBar() {
   const allProgressBars = document.querySelectorAll(".progress-bars");
   allProgressBars.forEach((progressBar, index) => {
     const line = new ProgressBar.Line(progressBar, {
@@ -164,45 +167,6 @@ function utilsLists(utils) {
 }
 
 /* Projects */
-/* function projectsLists(projects) {
-  projects.forEach((project) => {
-    const div = document.createElement("div");
-    div.classList.add("projects-list__project");
-    div.id = project.id;
-
-    const projectTitle = document.createElement("h3");
-    projectTitle.classList.add("projects-list__project__title");
-    projectTitle.textContent = project.title;
-
-    const projectImage = document.createElement("img");
-    projectImage.classList.add("projects-list__project__image");
-    projectTitle.textContent = project.title;
-
-    const projectDescription = document.createElement("p");
-    projectDescription.classList.add("projects-list__project__description");
-    projectDescription.textContent = project.description;
-
-    const projectLink = document.createElement("button");
-    projectLink.classList.add("projects-list__project__link");
-    projectLink.href = project.link;
-
-    projectsListContainer.appendChild(div);
-    div.appendChild(projectImage);
-    projectImage.appendChild(projectTitle);
-    projectImage.appendChild(projectDescription);
-    projectImage.appendChild(projectLink);
-    div.appendChild(projectTitle);
-
-    projectTitle.textContent = project.title;
-    projectImage.src = project.image;
-    projectImage.alt = project.title;
-    projectDescription.textContent = project.description;
-    projectLink.href = project.link;
-    projectLink.target = "_blank";
-    projectLink.textContent = "Voir le projet";
-  });
-} */
-
 function createProjects(projects) {
   projects.forEach((project) => {
     const div = document.createElement("div");
@@ -243,40 +207,13 @@ function createProjects(projects) {
   });
 }
 
-function createProjectContent(projectsList) {
-  const projectContent = document.createElement("div");
-  projectContent.classlist.add("project-content");
-
-  const projectTitle = document.createElement("h3");
-  projectTitle.classList.add("projects-content__title");
-  projectTitle.textContent = project.title;
-
-  const projectDescription = document.createElement("p");
-  projectDescription.classlist.add("project-content__description");
-  projectDescription.textContent = project.description;
-
-  const projectRole = document.createElement("p");
-  projectRole.classlist.add("project-content__role");
-  projectRole.textContent = project.role;
-
-  const projectLinks = document.createElement("div");
-  projectLinks.classlist.add("project-content__links");
-
-  const projectLink = document.createElement("a");
-  projectLink.classlist.add("project-content__link");
-  projectLink.href = project.link;
-
-  const projectCode = document.createElement("a");
-  projectCode.classlist.add("project-content__code");
-  projectCode.href = project.code;
-}
-
 /* const projectModal */
 function afficherProjets(project) {
   const allProjects = document.querySelectorAll(".projects-list__project");
-  allProjects.forEach((project) => {
-    project.addEventListener("click", () => {
-      project.classList.add("active");
+  const allOverlays = document.querySelectorAll(".overlay");
+  allProjects.forEach((overlay) => {
+    overlay.addEventListener("click", () => {
+      overlay.classList.add("active");
       console.log(project.id);
     });
   });
@@ -300,3 +237,40 @@ function typeWriting() {
     }
   }, 150);
 }
+
+/* Footer Links */
+function populateSocialLinks(links) {
+  // Renommé ici
+  links.forEach((link) => {
+    const linkContainer = document.createElement("div");
+    linkContainer.classList.add("footer__social-links__link-container");
+    linkContainer.id = link.id;
+
+    const linkElement = document.createElement("a");
+    linkElement.classList.add("footer__social-links__link");
+    linkElement.href = link.link;
+
+    const linkIcon = document.createElement("img");
+    linkIcon.classList.add("footer__social-links__icon");
+    linkIcon.src = `../assets/icons/social/${link.icon}.svg`;
+
+    const linkTitle = document.createElement("p");
+    linkTitle.classList.add("footer__social-links__title");
+    linkTitle.textContent = link.name;
+
+    socialLinksContainer.appendChild(linkContainer);
+    linkContainer.appendChild(linkElement);
+    linkElement.appendChild(linkIcon);
+    linkElement.appendChild(linkTitle);
+  });
+}
+
+/* Add Progress Bar */
+let progressBarsAdded = false;
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.scrollY;
+  if (!progressBarsAdded && scrollPosition >= 1028 && scrollPosition <= 1038) {
+    progressBar();
+    progressBarsAdded = true;
+  }
+});

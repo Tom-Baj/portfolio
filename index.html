@@ -178,6 +178,51 @@
         <section class="contact section-container" id="contact">
           <div class="contact__content">
             <h2 class="contact__title">Contact</h2>
+            <form
+              class="contact__form"
+              action="https://formspree.io/f/mgvwzyen"
+              method="POST"
+            >
+              <fieldset class="form-input">
+                <label class="form-name-label" for="full-name">Name</label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full-name"
+                  class="form-name"
+                  placeholder="First and Last"
+                  required
+                />
+                <label class="form-email-label" for="email-address"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email-address"
+                  name="_replyto"
+                  class="form-email"
+                  placeholder="email@domain.tld"
+                  required
+                />
+                <label class="form-message-label" for="message">Message</label>
+                <textarea
+                  rows="5"
+                  id="message"
+                  name="message"
+                  class="form-message"
+                  placeholder="Type your message here"
+                  required
+                ></textarea>
+                <input
+                  type="hidden"
+                  name="_subject"
+                  class="email-subject"
+                  value="Contact Form Submission"
+                />
+              </fieldset>
+              <input type="submit" value="Submit" />
+            </form>
+
             <p class="contact__description">
               Vous pouvez me contacter par e-mail ou sur les réseaux sociaux.
             </p>
@@ -187,37 +232,37 @@
           </div>
         </section>
       </div>
-
-      <!-- <div class="main__scroll-top" id="scroll-top">
-        <a href="#main" class="main__scroll-top-link">
-          <img
-            class="main__scroll-top-icon"
-            src="assets/icons/arrow-up.svg"
-            alt="scroll top"
-          />
+      <!--   <div class="scroll-top" id="scroll-top">
+        <a href="#main" class="scroll-top-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" d="M0 0h24v24H0Z" />
+            <path
+              fill="#FFF"
+              d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8 -3.59 8-8 8m0 2c5.52 0 10-4.48 10-10s-4.48-10-10-10C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10v0Zm-1-10v3c0 .55.45 1 1 1v0c.55 0 1-.45 1-1v-3h1.79c.45 0 .67-.54.35-.85l-2.79-2.79c-.2-.2-.51-.2-.71 0l-2.79 2.79c-.31.31-.09.85.36.85H11Z"
+            />
+          </svg>
         </a>
       </div> -->
     </main>
 
     <footer class="footer">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
       <div class="footer__container">
-        <a href="mailto:baouxtom@hotmail.com" class="footer__email-link"
-          >Contactez-moi</a
-        >
-        <div class="footer__social-links">
-          <a href="https://www.linkedin.com/in/tom-baj" target="_blank"
-            >LinkedIn</a
-          >
-          <a href="https://github.com/Tom-Baj" target="_blank">GitHub</a>
-          <a href="/politique-de-confidentialite"
-            >Politique de confidentialité</a
-          >
-        </div>
-        <div class="footer__copyright">
-          &#169; 2024 Tom Bajoux. Tous droits réservés.
+        <div class="footer__social-links social-links"></div>
+        <div class="footer__informations">
+          <div class="mention-legal">
+            <a href="#" class="mention-legal">Mention légale</a>
+          </div>
+          <div class="footer__information">
+            &#169; 2024 Tom Bajoux. Tous droits réservés.
+          </div>
         </div>
       </div>
     </footer>
+
+    <div class="modal-container"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>

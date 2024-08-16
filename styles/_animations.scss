@@ -32,3 +32,14 @@
 .slow-cursor {
   animation: slowCursor 1s ease infinite;
 }
+
+/* _animations.scss */
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
