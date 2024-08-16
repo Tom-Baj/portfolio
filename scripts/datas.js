@@ -128,7 +128,7 @@ export const projectsList = [
     role: "Développement du Backend du site Mon Vieux Grimoire un site de notation de livres",
     image: "../assets/images/projets/grimoire.webp",
     size: "--big",
-    link: "https://tom-baj.github.io/mon-vieux-grimoire/",
+    link: "",
     code: "https://github.com/Tom-Baj/grimoire-frontend.git",
   },
   {
@@ -138,7 +138,7 @@ export const projectsList = [
     role: "Développement d'un composant de notation interactif en utilisant CSS et Javascript",
     image: "../assets/images/projets/rating.webp",
     size: "--small",
-    link: "https://github.com/Tom-Baj/interactive-rating-component.git",
+    link: "https://tom-baj.github.io/interactive-rating-component/",
     code: "https://github.com/Tom-Baj/interactive-rating-component.git",
   },
   {
@@ -158,7 +158,7 @@ export const projectsList = [
     role: "Mise en place dynamique du FrontEnd en incorporant une sesson administrateur pour la gestion des projets via l'API",
     image: "../assets/images/projets/sophie.webp",
     size: "--high",
-    link: "https://tom-baj.github.io/portfolio-architecte/FrontEnd/",
+    link: "",
     code: "https://github.com/Tom-Baj/portfolio-architecte.git",
   },
   {
