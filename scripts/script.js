@@ -8,7 +8,13 @@ import {
   socialLinks,
 } from "./datas.js";
 
-import { headerScrolled, rellax, initTilt } from "./animations.js";
+import {
+  headerScrolled,
+  rellax,
+  initTilt,
+  typeWriting,
+  scrollAnimation,
+} from "./animations.js";
 
 const utilsListContainer = document.getElementById("utils-list");
 const softwareListContainer = document.getElementById("software-list");
@@ -27,39 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
   osLists(osList);
   softwareLists(softwareList);
   utilsLists(utilsList);
-  /*   progressBar();
-   */ typeWriting();
-  setupScrollAnimation();
+  typeWriting();
+  scrollAnimation();
   rellax();
   headerScrolled();
-  afficherProjets();
-  populateSocialLinks(socialLinks); // Correction ici
+  populateSocialLinks(socialLinks);
+  createProjectsContent(projectsList);
 });
-
-/* Change Header Appearance on Scroll */
-function headerToggle() {
-  const header = document.querySelector("header");
-
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 0) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
-}
-
-/* Scroll Animation */
-function setupScrollAnimation() {
-  const image = document.querySelector(".home__image-container--image");
-
-  window.addEventListener("scroll", () => {
-    const scrollPosition = window.scrollY;
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const rotation = (scrollPosition / maxScroll) * 100;
-    image.style.transform = `rotate(${rotation}deg)`;
-  });
-}
 
 /* Nav Links */
 function navLink(links) {
@@ -89,41 +69,6 @@ function skillLists(skills) {
     `;
     skillsListContainer.appendChild(li);
     li.appendChild(progression);
-  });
-}
-
-/* Progress bar*/
-function progressBar() {
-  const allProgressBars = document.querySelectorAll(".progress-bars");
-  allProgressBars.forEach((progressBar, index) => {
-    const line = new ProgressBar.Line(progressBar, {
-      strokeWidth: 2,
-      easing: "easeInOut",
-      duration: 2000,
-      color: "#FFEA82",
-      trailColor: "#eee",
-      trailWidth: 1,
-      svgStyle: { width: "100%", height: "20%" },
-      text: {
-        style: {
-          color: "hsla(75, 6%, 87%, 1)",
-          position: "absolute",
-          right: "0",
-          top: "30px",
-          padding: 0,
-          margin: 0,
-          transform: null,
-        },
-        autoStyleContainer: false,
-      },
-      from: { color: "#BC4749" },
-      to: { color: "#9add00" },
-      step: (state, line) => {
-        line.path.setAttribute("stroke", state.color);
-        line.setText(Math.round(line.value() * 100) + " %");
-      },
-    });
-    line.animate(skillsList[index].progression);
   });
 }
 
@@ -189,10 +134,16 @@ function createProjects(projects) {
     projectTitle.classList.add("overlay__title");
     projectTitle.textContent = project.title;
 
-    projectsListContainer.appendChild(div);
     div.appendChild(projectImage);
     div.appendChild(projectOverlay);
     projectOverlay.appendChild(projectTitle);
+
+    projectsListContainer.appendChild(div);
+
+    // Ajouter un écouteur d'événement pour ouvrir le drawer
+    div.addEventListener("click", function () {
+      openDrawer(project.id);
+    });
 
     // Initialisation de Masonry après l'ajout des projets
     imagesLoaded(grid, function () {
@@ -207,40 +158,86 @@ function createProjects(projects) {
   });
 }
 
-/* const projectModal */
-function afficherProjets(project) {
-  const allProjects = document.querySelectorAll(".projects-list__project");
-  const allOverlays = document.querySelectorAll(".overlay");
-  allProjects.forEach((overlay) => {
-    overlay.addEventListener("click", () => {
-      overlay.classList.add("active");
-      console.log(project.id);
-    });
-  });
-}
+/* Projects Informations */
+function createProjectsContent(projects) {
+  const drawer = document.getElementById("drawer");
 
-/* Type Writing */
-function typeWriting() {
-  let typeWriting = document.querySelector(".type-writing");
-  let content = typeWriting.textContent;
-  typeWriting.textContent = "";
+  // Créer la div drawer-container
+  const drawerContainer = document.createElement("div");
+  drawerContainer.classList.add("drawer__container");
 
-  let i = 0;
-  let timer = setInterval(() => {
-    if (i < content.length) {
-      typeWriting.textContent += content.charAt(i);
-      i++;
+  projects.forEach((project) => {
+    const projectContent = document.createElement("div");
+    projectContent.classList.add("project-content");
+    projectContent.id = `content-${project.id}`;
+    projectContent.style.display = "none"; // Caché par défaut
+
+    const closeContainer = document.createElement("div");
+    closeContainer.classList.add("drawer__close-container");
+
+    const closeButton = document.createElement("button");
+    closeButton.classList.add("drawer__close");
+    closeButton.addEventListener("click", closeDrawer);
+
+    closeButton.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+      <path fill="none" d="M0 0h24v24H0z"/>
+      <path d="M18.3 5.71a1 1 0 0 0-1.42-1.42L12 9.59 7.11 4.7a1 1 0 0 0-1.42 1.42L10.59 12l-4.9 4.9a1 1 0 1 0 1.42 1.42L12 14.41l4.9 4.9a1 1 0 0 0 1.42-1.42L13.41 12l4.9-4.9z"/>
+    </svg>
+  `;
+
+    const projectContentTitle = document.createElement("h3");
+    projectContentTitle.classList.add("project-content__title");
+    projectContentTitle.textContent = project.title;
+
+    const projectContentDescription = document.createElement("h4");
+    projectContentDescription.classList.add("project-content__description");
+    projectContentDescription.textContent = project.description;
+
+    const projectContentRole = document.createElement("p");
+    projectContentRole.classList.add("project-content__role");
+    projectContentRole.textContent = project.role;
+
+    const linkContainer = document.createElement("div");
+    linkContainer.classList.add("project-content__link-container");
+
+    const buttonLink = document.createElement("a");
+    buttonLink.classList.add("project-content__button--link");
+    buttonLink.textContent = "Voir le projet";
+
+    const buttonCode = document.createElement("a");
+    buttonCode.classList.add("project-content__button--code");
+    buttonCode.textContent = "Voir le code";
+    buttonCode.href = project.code;
+    buttonCode.target = "_blank";
+
+    if (project.link) {
+      buttonLink.href = project.link;
+      buttonLink.target = "_blank";
     } else {
-      clearInterval(timer);
-      typeWriting.classList.remove("type-writing");
-      typeWriting.classList.add("slow-cursor");
+      buttonLink.disabled = true;
+      buttonLink.classList.add("remove");
     }
-  }, 150);
+
+    linkContainer.appendChild(buttonLink);
+    linkContainer.appendChild(buttonCode);
+
+    projectContent.appendChild(closeContainer);
+    closeContainer.appendChild(closeButton);
+    projectContent.appendChild(projectContentTitle);
+    projectContent.appendChild(projectContentDescription);
+    projectContent.appendChild(projectContentRole);
+    projectContent.appendChild(linkContainer);
+
+    drawerContainer.appendChild(projectContent);
+  });
+
+  // Ajouter drawerContainer à la div drawer
+  drawer.appendChild(drawerContainer);
 }
 
 /* Footer Links */
 function populateSocialLinks(links) {
-  // Renommé ici
   links.forEach((link) => {
     const linkContainer = document.createElement("div");
     linkContainer.classList.add("footer__social-links__link-container");
@@ -265,6 +262,41 @@ function populateSocialLinks(links) {
   });
 }
 
+/* Progress bar*/
+function progressBar() {
+  const allProgressBars = document.querySelectorAll(".progress-bars");
+  allProgressBars.forEach((progressBar, index) => {
+    const line = new ProgressBar.Line(progressBar, {
+      strokeWidth: 2,
+      easing: "easeInOut",
+      duration: 2000,
+      color: "#FFEA82",
+      trailColor: "#eee",
+      trailWidth: 1,
+      svgStyle: { width: "100%", height: "20%" },
+      text: {
+        style: {
+          color: "hsla(75, 6%, 87%, 1)",
+          position: "absolute",
+          right: "0",
+          top: "30px",
+          padding: 0,
+          margin: 0,
+          transform: null,
+        },
+        autoStyleContainer: false,
+      },
+      from: { color: "#BC4749" },
+      to: { color: "#9add00" },
+      step: (state, line) => {
+        line.path.setAttribute("stroke", state.color);
+        line.setText(Math.round(line.value() * 100) + " %");
+      },
+    });
+    line.animate(skillsList[index].progression);
+  });
+}
+
 /* Add Progress Bar */
 let progressBarsAdded = false;
 window.addEventListener("scroll", () => {
@@ -274,3 +306,33 @@ window.addEventListener("scroll", () => {
     progressBarsAdded = true;
   }
 });
+
+function openDrawer(projectId) {
+  const drawer = document.getElementById("drawer");
+  const mainContainer = document.querySelector(".main__container");
+
+  // Masquer toutes les sections de contenu
+  const allContents = drawer.querySelectorAll(".project-content");
+  allContents.forEach((content) => {
+    content.style.display = "none";
+  });
+
+  // Afficher le contenu spécifique
+  const projectContent = document.getElementById(`content-${projectId}`);
+  if (projectContent) {
+    projectContent.style.display = "block";
+  }
+
+  // Ajouter la classe pour ouvrir le drawer et ajuster le contenu principal
+  drawer.classList.add("open");
+  mainContainer.classList.add("drawer-open");
+}
+
+function closeDrawer() {
+  const drawer = document.getElementById("drawer");
+  const mainContainer = document.querySelector(".main__container");
+
+  // Supprimer la classe pour fermer le drawer et rétablir le contenu principal
+  drawer.classList.remove("open");
+  mainContainer.classList.remove("drawer-open");
+}
