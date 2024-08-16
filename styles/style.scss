@@ -567,73 +567,114 @@
 
 /* Contact */
 .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 5rem 0;
+
+  &__content {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: $radius-large;
+    padding: 2rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-width: $width-middle;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 60px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      transform: translateY(-10px);
+      color: $light-sky-blue;
+    }
+  }
+
   &__title {
     font-family: "Allan-Regular", sans-serif;
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
-  }
-}
-
-.form-input {
-  position: relative;
-  padding: 15px 0 0;
-  width: $width-middle;
-  margin-top: 10px;
-  /*   background-color: hsla(75, 6%, 87%, 0.3);
- */
-}
-
-.form-name,
-.form-email,
-.form-message {
-  width: 100%;
-  border: 0;
-  border-bottom: 2px solid hsl(204, 95%, 80%);
-  outline: 0;
-  font-size: 1.3rem;
-  color: hsl(75, 6%, 87%);
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
-
-  &::placeholder {
-    color: transparent;
+    color: $platinum;
   }
 
-  &:placeholder-shown + label {
+  .form-input {
+    position: relative;
+    padding: 15px 0;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  .form-name,
+  .form-email,
+  .form-message {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid $blue;
+    outline: none;
     font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
+    color: $platinum;
+    background: transparent;
+    padding: 10px 0;
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      border-color: $primary;
+      font-weight: bold;
+    }
+
+    &:focus + label {
+      color: $primary;
+      font-size: 1rem;
+      top: -20px;
+    }
   }
 
-  &:focus {
-    padding-bottom: 6px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #11998e, #38ef7d);
-    border-image-slice: 1;
+  .form-name-label,
+  .form-email-label,
+  .form-message-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $platinum;
+    font-size: 1.3rem;
+    transition: 0.3s;
+    pointer-events: none;
   }
-}
 
-.form-name-label,
-.form-email-label,
-.form-message-label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: hsl(75, 6%, 87%);
-}
+  .form-input input:focus ~ .form-name-label,
+  .form-input input:focus ~ .form-email-label,
+  .form-input textarea:focus ~ .form-message-label {
+    top: -20px;
+    font-size: 1rem;
+    color: $primary;
+    font-weight: bold;
+  }
 
-.form-input input:focus ~ .form-name-label,
-.form-input input:focus ~ .form-email-label,
-.form-input textarea:focus ~ .form-message-label {
-  top: 0;
-  font-size: 1rem;
-  color: #11998e;
-  font-weight: 700;
+  &__form-button {
+    display: inline-block;
+    background-color: $primary;
+    color: $platinum;
+    padding: 10px 20px;
+    border: none;
+    border-radius: $radius-medium;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary, 10%);
+    }
+  }
 }
 
 /* Footer */
@@ -645,6 +686,7 @@
   position: relative;
   z-index: 1000;
   padding: 2rem 0;
+  margin-top: 20px;
   overflow: hidden; // Contain the stars in the footer
 
   /* Intégration des étoiles */
@@ -696,16 +738,31 @@
 
   &__social-links {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
 
-    @__link {
+    &__link {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-left: 5px;
+      color: $platinum;
+
+      img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+        margin: 10px;
+      }
+      &:hover img {
+        transform: scale(1.5);
+      }
     }
 
     &__link-container {
       display: flex;
+      gap: 1rem;
       justify-content: center;
       align-items: center;
 
@@ -734,11 +791,24 @@
         color: $platinum;
         text-decoration: none;
         transition: color 0.3s ease;
+        font-size: 1rem;
 
         &:hover {
           color: $light-sky-blue;
         }
       }
+    }
+  }
+
+  &__mail {
+    .mail {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 1rem;
+      color: $platinum;
     }
   }
 
@@ -756,94 +826,6 @@
     }
   }
 }
-
-/* .footer {
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: $platinum;
-  font-size: 1rem;
-  font-family: "Chillax-Variable", sans-serif;
-  position: relative;
-  z-index: 1000;
-  padding: 2rem 0;
-
-  &__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  &__social-links {
-    display: flex;
-    gap: 1rem;
-
-    &__link-container {
-      position: relative;
-
-      &:hover .footer__social-links__icon {
-        transform: scale(1.2);
-        transition: transform 0.3s ease;
-      }
-
-      &:hover::after {
-        content: attr(data-title);
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0, 0, 0, 0.8);
-        color: #fff;
-        padding: 0.5rem;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        white-space: nowrap;
-      }
-    }
-
-    &__icon {
-      width: 24px;
-      height: 24px;
-      transition: transform 0.3s ease;
-    }
-  }
-
-  &__informations {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    .mention-legal {
-      margin-bottom: 1rem;
-
-      a {
-        color: $platinum;
-        text-decoration: none;
-        transition: color 0.3s ease;
-
-        &:hover {
-          color: $light-sky-blue;
-        }
-      }
-    }
-  }
-
-  .scroll-top {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    cursor: pointer;
-    font-size: 2rem;
-    color: $platinum;
-
-    &:hover {
-      color: $light-sky-blue;
-      transform: translateY(-5px);
-    }
-  }
-} */
 
 .remove {
   display: none;
