@@ -5,18 +5,23 @@
 @import "typography";
 @import "animations";
 
-html {
+html,
+body {
   font-size: 20px;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /* Header */
 .header {
   position: sticky;
+  height: 50px;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   padding: 0.5rem 0;
+
   transition: padding 0.6s ease-in-out; /* Ajout de la transition pour le padding */
 
   &__container {
@@ -77,6 +82,16 @@ html {
   }
 }
 
+.scrolled {
+  background-color: hsla(210, 90%, 96%, 0.3);
+  transition: background-color 0.6s ease-in-out, padding 0.6s ease-in-out;
+  padding: 0;
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 /* Hamburger */
 .hamburger {
   display: none;
@@ -99,10 +114,11 @@ html {
     display: flex;
     align-items: end;
   }
+
   .astronaut {
     position: absolute;
-    top: 100px;
-    right: -100px;
+    top: 1500px;
+    right: 0px;
     width: 30%;
     height: auto;
     object-fit: cover;
@@ -111,18 +127,18 @@ html {
   .moon {
     position: fixed;
     top: 100px;
-    right: 500px;
+    left: 500px;
     width: 10%;
     height: auto;
     object-fit: cover;
-    z-index: 2;
+    z-index: -1;
   }
 
   .saturne {
     position: absolute;
-    top: 300px;
-    right: 600px;
-    width: 25%;
+    top: 1200px;
+    left: 500px;
+    width: 50%;
     height: auto;
     object-fit: cover;
   }
@@ -130,7 +146,7 @@ html {
   .earth {
     position: absolute;
     top: 500px;
-    right: 150px;
+    right: 130px;
     width: 12%;
     height: auto;
     object-fit: cover;
@@ -692,13 +708,12 @@ html {
 
 /* Footer */
 .footer {
-  background: $blue-dark;
+  background-color: $blue-dark;
   color: $platinum;
   font-size: 1rem;
   font-family: "Chillax-Variable", sans-serif;
   position: relative;
   z-index: 1000;
-  padding: 2rem 0;
   margin-top: 20px;
   overflow: hidden; // Contain the stars in the footer
 
@@ -794,6 +809,7 @@ html {
 
   &__informations {
     display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
 
@@ -820,34 +836,10 @@ html {
       justify-content: center;
       align-items: center;
       gap: 1rem;
-      margin: 1rem;
+      margin: 1rem 0 1rem 1rem;
       color: $platinum;
     }
   }
-
-  .scroll-top {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    cursor: pointer;
-    font-size: 2rem;
-    color: $platinum;
-
-    &:hover {
-      color: $light-sky-blue;
-      transform: translateY(-5px);
-    }
-  }
-}
-
-.remove {
-  display: none;
-}
-
-.scrolled {
-  background-color: hsla(210, 90%, 96%, 0.3);
-  transition: background-color 0.6s ease-in-out;
-  padding: 0;
 }
 
 .hidden {
@@ -855,7 +847,82 @@ html {
   visibility: hidden;
 }
 
+.scroll-top {
+  width: 56px;
+  position: fixed;
+  right: 300px;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: $platinum;
+  z-index: 99999999;
+  &:hover {
+    color: $light-sky-blue;
+    transform: translateY(-5px);
+  }
+}
+
+.image-end {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  position: relative;
+}
+
+.img-test {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
 /* Responsive Styles */
+
+@media (max-width: 1440px) {
+  html {
+    font-size: 19px;
+  }
+
+  /* Home */
+  .home__title {
+    font-size: 4.5rem;
+
+    &--description {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* About */
+  .about__title {
+    font-size: 2.5rem;
+  }
+
+  .about__description {
+    font-size: 1.5rem;
+  }
+
+  .about__image {
+    max-height: 400px;
+  }
+
+  /* Projects */
+  .projects-list {
+    width: $width-full;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .projects-list__project {
+      width: 40%;
+    }
+  }
+
+  /* Contact */
+  .contact__content {
+    max-width: 75%;
+  }
+}
 
 /* Pour les écrans de moins de 1200px */
 @media (max-width: 1200px) {
@@ -863,7 +930,30 @@ html {
     font-size: 18px;
   }
 
+  /* Floating Elements */
+  .floating-elements {
+    .astronaut {
+    }
+
+    .moon {
+      top: 50px;
+      left: 10px;
+    }
+
+    .saturne {
+      display: none;
+    }
+  }
+
   /* Home */
+  .home__title {
+    font-size: 3.5rem;
+
+    &--description {
+      font-size: 2rem;
+    }
+  }
+
   .home .ordinateur {
     top: 50%;
   }
@@ -943,8 +1033,59 @@ html {
   /* Contact */
 }
 
-/* 768 */
+/* 990 */
+@media (max-width: 900px) {
+  html {
+    font-size: 16px;
+  }
 
+  /* Home */
+  .home {
+    flex-direction: column-reverse;
+    margin: 3rem 0;
+    padding: 1rem;
+  }
+
+  .home__title {
+    font-size: 4.5rem;
+
+    &--description {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* About */
+  .about__content {
+    width: $width-max;
+  }
+  .about__title {
+    font-size: 1.8rem;
+  }
+
+  .about__description {
+    font-size: 1rem;
+  }
+
+  .about__image {
+    max-height: 250px;
+  }
+
+  /* Projects */
+  .projects-list {
+    width: $width-full;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    .projects-list__project {
+      width: 40%;
+    }
+  }
+
+  /* Contact */
+}
+
+/* 768 */
 /* Pour les écrans de moins de 768px */
 @media (max-width: 768px) {
   html {
@@ -952,6 +1093,29 @@ html {
   }
 
   /* Home */
+  .home {
+    margin: 3rem 0;
+
+    flex-direction: column-reverse;
+    padding: 1rem;
+  }
+
+  .home__images-container {
+    width: $width-full;
+  }
+
+  .home__content {
+    width: $width-full;
+  }
+
+  .home__title {
+    font-size: 4.5rem;
+
+    &--description {
+      font-size: 2.2rem;
+    }
+  }
+
   .home .ordinateur {
     top: calc(50% + 50px);
   }
@@ -995,6 +1159,23 @@ html {
   }
 
   /* Home */
+  .home {
+    flex-direction: column-reverse;
+    padding: 1rem;
+  }
+
+  .home__images-container {
+    width: $width-full;
+  }
+
+  .home__title {
+    font-size: 3rem;
+
+    &--description {
+      font-size: 1.5rem;
+    }
+  }
+
   .home .ordinateur {
     top: calc(50% + 100px);
   }
@@ -1002,7 +1183,7 @@ html {
   /* About */
   .about__content {
     flex-direction: column-reverse;
-    width: $width-full;
+    width: $width-big;
     padding: 1rem;
   }
 
