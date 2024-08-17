@@ -11,10 +11,8 @@ function headerScrolled() {
   window.addEventListener("scroll", () => {
     if (window.scrollY > 0) {
       header.classList.add("scrolled");
-      headerLogo.classList.add("hidden");
     } else {
       header.classList.remove("scrolled");
-      headerLogo.classList.remove("hidden");
     }
   });
 }
@@ -80,7 +78,7 @@ function scrollAnimation() {
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const rotation = (scrollPosition / maxScroll) * 100;
+    const rotation = (scrollPosition / maxScroll) * 200; // Augmentation de la vitesse de rotation
     image.style.transform = `rotate(${rotation}deg)`;
   });
 }

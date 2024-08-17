@@ -336,3 +336,13 @@ function closeDrawer() {
   drawer.classList.remove("open");
   mainContainer.classList.remove("drawer-open");
 }
+
+// script.js
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navList = document.getElementById("nav-list");
+
+  hamburger.addEventListener("click", () => {
+    navList.classList.toggle("active");
+  });
+});
