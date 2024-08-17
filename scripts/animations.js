@@ -34,8 +34,6 @@ function initHoverTilt() {
       VanillaTilt.init(tiltElement, {
         max: 25,
         speed: 400,
-        glare: true,
-        "max-glare": 0.5,
       });
     });
 
@@ -65,6 +63,43 @@ function typeWriting() {
       i++;
     } else {
       clearInterval(timer);
+      function initTilt() {
+        const elements = document.querySelectorAll("[data-tilt]");
+        VanillaTilt.init(elements, {
+          max: 35,
+          speed: 400,
+          perspective: 1000,
+        });
+      }
+
+      function initHoverTilt() {
+        const tiltElements = document.querySelectorAll(
+          ".about__image-container"
+        );
+
+        tiltElements.forEach((tiltElement) => {
+          tiltElement.addEventListener("mouseenter", function () {
+            if (!tiltElement.vanillaTilt) {
+              VanillaTilt.init(tiltElement, {
+                max: 25,
+                speed: 400,
+              });
+            }
+          });
+
+          tiltElement.addEventListener("mouseleave", function () {
+            if (tiltElement.vanillaTilt) {
+              tiltElement.vanillaTilt.destroy();
+              tiltElement.vanillaTilt = null; // Ensure it can be re-initialized on next mouseenter
+            }
+          });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        initTilt(); // Initialisation générale pour tous les éléments avec data-tilt (si nécessaire)
+        initHoverTilt(); // Initialisation spécifique pour le hover
+      });
       typeWriting.classList.remove("type-writing");
       typeWriting.classList.add("slow-cursor");
     }
@@ -88,12 +123,8 @@ function initSubtleTilt() {
 
   if (subtleTiltElement) {
     VanillaTilt.init(subtleTiltElement, {
-      max: 10, // Angle d'inclinaison réduit
-      speed: 600, // Vitesse plus lente
-      scale: 1.02, // Légère mise à l'échelle pour un effet subtil
-      glare: false, // Pas d'effet de reflet (glare) pour un rendu plus sobre
-      "max-glare": 0, // Désactiver le glare si vous l'avez configuré ailleurs
-      easing: "cubic-bezier(.03,.98,.52,.99)", // Adoucir l'animation avec une courbe d'accélération
+      max: 25, // Angle d'inclinaison réduit
+      speed: 400, // Vitesse plus lente
     });
   }
 }
@@ -102,4 +133,36 @@ document.addEventListener("DOMContentLoaded", function () {
   initSubtleTilt(); // Initialisation spécifique pour cet élément
 });
 
-export { headerScrolled, rellax, initTilt, typeWriting, scrollAnimation };
+/* Saturne */
+function animateSaturne() {
+  const saturneElement = document.querySelector(".saturne");
+  const rellaxSaturne = new Rellax(saturneElement, {
+    horizontal: true,
+    vertical: true,
+    center: false,
+    wrapper: null,
+    round: true,
+    breakpoints: [576, 768, 1201],
+    speed: -2,
+    overflow: false,
+    callback: function (position) {
+      if (position.x >= 0) {
+        saturneElement.style.overflow = "hidden";
+      } else {
+        saturneElement.style.overflow = "visible";
+      }
+      if (position.x >= window.innerWidth) {
+        rellaxSaturne.destroy();
+      }
+    },
+  });
+}
+
+export {
+  headerScrolled,
+  rellax,
+  initTilt,
+  typeWriting,
+  scrollAnimation,
+  animateSaturne,
+};

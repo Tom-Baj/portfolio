@@ -14,6 +14,7 @@ import {
   initTilt,
   typeWriting,
   scrollAnimation,
+  animateSaturne,
 } from "./animations.js";
 
 const utilsListContainer = document.getElementById("utils-list");
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerScrolled();
   populateSocialLinks(socialLinks);
   createProjectsContent(projectsList);
+  animateSaturne();
 });
 
 /* Nav Links */
