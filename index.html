@@ -11,32 +11,60 @@
   </head>
 
   <body>
+        <!-- <div class="loader" id="loader">
+      <div class="loader__spinner"></div>
+    </div> -->
     <header class="header" id="header">
       <div class="header__container">
         <div class="header__container__logo-container">
           <a href="#main" class="header__container__logo-link">
-            <img
-              class="header__container__logo"
-              src="assets/icons/logo.webp"
-              alt="logo"
-            />
+            <img class="header__container__logo" src="assets/icons/logo.webp" alt="logo" />
           </a>
         </div>
         <div class="header__container__nav-container">
           <nav class="header__container__nav">
+            <div class="hamburger" id="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
             <ul class="header__container__nav-list" id="nav-list"></ul>
           </nav>
         </div>
       </div>
     </header>
-
-    <!-- <div class="loader" id="loader">
-      <div class="loader__spinner"></div>
-    </div> -->
-
+    
     <main class="main" id="main">
       <div class="main__container">
-        <section class="section-container" id="home">
+        <div class="floating-elements">
+          <div class="floating-elements__images-container">
+              <img
+                class="rellax astronaut"
+                data-rellax-speed="-5"
+                src="./assets/images/astronaut.webp"
+                alt="astronaut"
+              />
+              <img
+                class="rellax moon"
+                data-rellax-speed="-3"
+                src="./assets/images/moon.webp"
+                alt="moon"
+              />
+              <img
+                src="./assets/images/earth.webp"
+                alt="earth"
+                class="rellax earth"
+                data-rellax-speed="-6"
+              />
+              <img
+                src="./assets/images/saturne.webp"
+                alt="saturne"
+                class="rellax saturne"
+                data-rellax-speed="-4"
+              />
+            </div>
+        </div>
+        <section class=" section-container" id="home">
           <div class="home">
             <div class="home__image-container">
               <img
@@ -54,39 +82,11 @@
                   >Développeur web junior !
                 </span>
               </h1>
-            </div>
-            <div class="home__image-container--image-bg-container">
-              <img
-                class="rellax astronaut"
-                data-rellax-speed="-5"
-                src="./assets/images/astronaut.webp"
-                alt="astronaut"
-              />
-              <img
-                class="rellax moon"
-                data-rellax-speed="-3"
-                data-rellax-vertical-scroll-axis="x"
-                src="./assets/images/moon.webp"
-                alt="moon"
-              />
-              <img
-                src="./assets/images/earth.webp"
-                alt="earth"
-                class="rellax earth"
-                data-rellax-vertical-scroll-axis="xy"
-                data-rellax-speed="6"
-              />
-              <img
-                src="./assets/images/saturne.webp"
-                alt="saturne"
-                class="rellax saturne"
-                data-rellax-speed="4"
-              />
-            </div>
+            </div>              
           </div>
         </section>
 
-        <section id="about">
+        <section class="about section-container" id="about">
           <div class="about">
             <div class="about__content">
               <div class="about__text">
@@ -100,14 +100,15 @@
               </div>
               <div
                 class="about__image-container"
-                data-tilt
-                data-tilt-max="25"
-                data-tilt-speed="400"
+                
               >
                 <img
                   class="about__image"
                   src="assets/images/tom.webp"
                   alt="Tom Bajoux"
+                  data-tilt
+                data-tilt-max="25"
+                data-tilt-speed="400"
                 />
               </div>
             </div>
@@ -204,61 +205,11 @@
             </form>
           </div>
         </section>
-        
-
-<!--         <section class="contact section-container" id="contact">
-          <div class="contact__content">
-            <h2 class="contact__title">Contact</h2>
-            <form
-              class="contact__form"
-              action="https://formspree.io/f/mgvwzyen"
-              method="POST"
-            >
-              <fieldset class="form-input">
-                <input
-                  type="text"
-                  id="full-name"
-                  name="full-name"
-                  class="form-name"
-                  placeholder="First and Last"
-                  required
-                />
-                <label class="form-name-label" for="full-name">Name</label>
-                <label class="form-email-label" for="email-address"
-                  >Email Address</label
-                >
-                <input
-                  type="email"
-                  id="email-address"
-                  name="_replyto"
-                  class="form-email"
-                  placeholder="email@domain.tld"
-                  required
-                />
-                <label class="form-message-label" for="message"
-                  >Message</label
-                >
-                <textarea
-                  rows="5"
-                  id="message"
-                  name="message"
-                  class="form-message"
-                  placeholder="Type your message here"
-                  required
-                ></textarea>
-                <input
-                  type="hidden"
-                  name="_subject"
-                  class="email-subject"
-                  value="Contact Form Submission"
-                />
-              </fieldset>
-              <input type="submit" value="Submit" />
-            </form>
-          </div>
-        </section> -->
       </div>
-      <!--   <div class="scroll-top" id="scroll-top">
+
+    </main>
+
+          <!--   <div class="scroll-top" id="scroll-top">
         <a href="#main" class="scroll-top-link">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path fill="none" d="M0 0h24v24H0Z" />
@@ -269,7 +220,6 @@
           </svg>
         </a>
       </div> -->
-    </main>
 
     <footer class="footer">
       <div id="stars"></div>
