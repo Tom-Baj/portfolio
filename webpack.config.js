@@ -6,11 +6,12 @@ const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production", // mode production active les optimisations
-  entry: "./scripts/script.js", // Chemin correct vers script.js
+  mode: "production", // Active les optimisations pour la production
+  entry: "./scripts/script.js", // Chemin vers le fichier d'entrée principal
   output: {
-    filename: "bundle.min.js", // Nom du fichier JavaScript minifié généré
+    filename: "bundle.min.js", // Nom du fichier JS minifié généré
     path: path.resolve(__dirname, "dist"), // Dossier de sortie
+    publicPath: "", // Indique que les chemins sont relatifs à la racine du projet
     clean: true, // Nettoie le dossier dist avant chaque build
   },
   optimization: {
@@ -24,22 +25,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/, // Gestion des fichiers SCSS
-        use: ["style-loader", "css-loader", "sass-loader"], // Loaders pour traiter les fichiers SCSS
+        test: /\.scss$/, // Pour les fichiers SCSS
+        use: ["style-loader", "css-loader", "sass-loader"], // Loaders pour traiter SCSS -> CSS
       },
       {
-        test: /\.css$/, // Gestion des fichiers CSS
+        test: /\.css$/, // Pour les fichiers CSS
         use: ["style-loader", "css-loader"], // Chargeurs pour injecter et lire les fichiers CSS
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif|webp|ico)$/i, // Gestion des images et icônes
+        test: /\.(png|svg|jpg|jpeg|gif|webp|ico)$/i, // Pour les images et icônes
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name][ext]", // Chemin de sortie pour les images
         },
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i, // Gestion des polices
+        test: /\.(woff|ttf)$/i, // Pour les polices
         type: "asset/resource",
         generator: {
           filename: "assets/fonts/[name][ext]", // Chemin de sortie pour les polices
@@ -49,8 +50,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./index.html", // Chemin correct vers index.html
-      minify: false,
+      template: "./index.html", // Chemin vers le modèle HTML de base
+      filename: "index.html", // Nom du fichier HTML généré
+      minify: false, // Désactive la minification pour le HTML
     }),
   ],
 };
