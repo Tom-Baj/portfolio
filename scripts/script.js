@@ -218,6 +218,10 @@ function createProjectsContent(projects) {
     projectContentRole.classList.add("project-content__role");
     projectContentRole.textContent = project.role;
 
+    const projetContentDefis = document.createElement("p");
+    projetContentDefis.classList.add("project-content__defis");
+    projetContentDefis.textContent = project.defis;
+
     const linkContainer = document.createElement("div");
     linkContainer.classList.add("project-content__link-container");
 
@@ -247,6 +251,7 @@ function createProjectsContent(projects) {
     projectContent.appendChild(projectContentTitle);
     projectContent.appendChild(projectContentDescription);
     projectContent.appendChild(projectContentRole);
+    projectContent.appendChild(projetContentDefis);
     projectContent.appendChild(linkContainer);
 
     drawerContainer.appendChild(projectContent);
