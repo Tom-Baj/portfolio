@@ -1,3 +1,14 @@
+.type-writing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: cursor 0.6s ease infinite;
+}
+
+.slow-cursor {
+  animation: slowCursor 1s ease infinite;
+}
+
 @keyframes cursor {
   0% {
     border-right: 2px solid rgba(255, 255, 255, 1);
@@ -21,19 +32,6 @@
     border-right: 2px solid rgba(255, 255, 255, 1);
   }
 }
-
-.type-writing {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: cursor 0.6s ease infinite;
-}
-
-.slow-cursor {
-  animation: slowCursor 1s ease infinite;
-}
-
-/* _animations.scss */
 
 @keyframes animStar {
   from {

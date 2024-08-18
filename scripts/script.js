@@ -23,7 +23,7 @@ const osListContainer = document.getElementById("os-list");
 const skillsListContainer = document.getElementById("technology-list");
 const navLinksContainer = document.getElementById("nav-list");
 const projectsListContainer = document.getElementById("projects-list");
-const socialLinksContainer = document.querySelector(".social-links"); // Correction ici
+const socialLinksContainer = document.querySelector(".social-links");
 
 const grid = document.querySelector(".projects-list");
 
@@ -41,7 +41,27 @@ document.addEventListener("DOMContentLoaded", () => {
   populateSocialLinks(socialLinks);
   createProjectsContent(projectsList);
   animateSaturne();
+  hamburger();
+  openModal();
+  addScrollToTop();
 });
+
+function addScrollToTop() {
+  const scrollTop = document.getElementById("scroll-top");
+
+  if (!scrollTop) {
+    console.error("Element with ID 'scroll-top' not found.");
+    return;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 1000) {
+      scrollTop.style.display = "block";
+    } else {
+      scrollTop.style.display = "none";
+    }
+  });
+}
 
 /* Nav Links */
 function navLink(links) {
@@ -142,12 +162,11 @@ function createProjects(projects) {
 
     projectsListContainer.appendChild(div);
 
-    // Ajouter un écouteur d'événement pour ouvrir le drawer
     div.addEventListener("click", function () {
       openDrawer(project.id);
     });
 
-    // Initialisation de Masonry après l'ajout des projets
+    // Initialisation de Masonry
     imagesLoaded(grid, function () {
       new Masonry(grid, {
         itemSelector: ".projects-list__project",
@@ -164,7 +183,6 @@ function createProjects(projects) {
 function createProjectsContent(projects) {
   const drawer = document.getElementById("drawer");
 
-  // Créer la div drawer-container
   const drawerContainer = document.createElement("div");
   drawerContainer.classList.add("drawer__container");
 
@@ -172,7 +190,7 @@ function createProjectsContent(projects) {
     const projectContent = document.createElement("div");
     projectContent.classList.add("project-content");
     projectContent.id = `content-${project.id}`;
-    projectContent.style.display = "none"; // Caché par défaut
+    projectContent.style.display = "none";
 
     const closeContainer = document.createElement("div");
     closeContainer.classList.add("drawer__close-container");
@@ -234,7 +252,6 @@ function createProjectsContent(projects) {
     drawerContainer.appendChild(projectContent);
   });
 
-  // Ajouter drawerContainer à la div drawer
   drawer.appendChild(drawerContainer);
 }
 
@@ -313,19 +330,16 @@ function openDrawer(projectId) {
   const drawer = document.getElementById("drawer");
   const mainContainer = document.querySelector(".main__container");
 
-  // Masquer toutes les sections de contenu
   const allContents = drawer.querySelectorAll(".project-content");
   allContents.forEach((content) => {
     content.style.display = "none";
   });
 
-  // Afficher le contenu spécifique
   const projectContent = document.getElementById(`content-${projectId}`);
   if (projectContent) {
     projectContent.style.display = "block";
   }
 
-  // Ajouter la classe pour ouvrir le drawer et ajuster le contenu principal
   drawer.classList.add("open");
   mainContainer.classList.add("drawer-open");
 }
@@ -334,17 +348,42 @@ function closeDrawer() {
   const drawer = document.getElementById("drawer");
   const mainContainer = document.querySelector(".main__container");
 
-  // Supprimer la classe pour fermer le drawer et rétablir le contenu principal
   drawer.classList.remove("open");
   mainContainer.classList.remove("drawer-open");
 }
 
-// script.js
-document.addEventListener("DOMContentLoaded", () => {
+/* Hamburger */
+function hamburger() {
   const hamburger = document.getElementById("hamburger");
   const navList = document.getElementById("nav-list");
 
   hamburger.addEventListener("click", () => {
     navList.classList.toggle("active");
   });
-});
+}
+
+function openModal() {
+  const modal = document.getElementById("legalModal");
+  const link = document.querySelector(".legal-mentions-link");
+  const span = modal.querySelector(".modal__close"); // Correction ici
+
+  if (!link || !span) {
+    console.error("Les éléments requis pour la modal ne sont pas trouvés.");
+    return;
+  }
+
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
+    modal.style.display = "block";
+  });
+
+  span.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+}

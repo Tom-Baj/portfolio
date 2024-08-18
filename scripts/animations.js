@@ -4,7 +4,6 @@ function rellax() {
   });
 }
 
-/* Header Scroll */
 function headerScrolled() {
   const header = document.querySelector("header");
   const headerLogo = document.querySelector(".header__container__logo");
@@ -46,11 +45,10 @@ function initHoverTilt() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  initTilt(); // Initialisation générale pour tous les éléments avec data-tilt (si nécessaire)
-  initHoverTilt(); // Initialisation spécifique pour le hover
+  initTilt();
+  initHoverTilt();
 });
 
-/* Type Writing */
 function typeWriting() {
   let typeWriting = document.querySelector(".type-writing");
   let content = typeWriting.textContent;
@@ -90,15 +88,15 @@ function typeWriting() {
           tiltElement.addEventListener("mouseleave", function () {
             if (tiltElement.vanillaTilt) {
               tiltElement.vanillaTilt.destroy();
-              tiltElement.vanillaTilt = null; // Ensure it can be re-initialized on next mouseenter
+              tiltElement.vanillaTilt = null;
             }
           });
         });
       }
 
       document.addEventListener("DOMContentLoaded", function () {
-        initTilt(); // Initialisation générale pour tous les éléments avec data-tilt (si nécessaire)
-        initHoverTilt(); // Initialisation spécifique pour le hover
+        initTilt();
+        initHoverTilt();
       });
       typeWriting.classList.remove("type-writing");
       typeWriting.classList.add("slow-cursor");
@@ -113,7 +111,7 @@ function scrollAnimation() {
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const rotation = (scrollPosition / maxScroll) * 200; // Augmentation de la vitesse de rotation
+    const rotation = (scrollPosition / maxScroll) * 200;
     image.style.transform = `rotate(${rotation}deg)`;
   });
 }
@@ -123,17 +121,16 @@ function initSubtleTilt() {
 
   if (subtleTiltElement) {
     VanillaTilt.init(subtleTiltElement, {
-      max: 25, // Angle d'inclinaison réduit
-      speed: 400, // Vitesse plus lente
+      max: 25,
+      speed: 400,
     });
   }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  initSubtleTilt(); // Initialisation spécifique pour cet élément
+  initSubtleTilt();
 });
 
-/* Saturne */
 function animateSaturne() {
   const saturneElement = document.querySelector(".saturne");
   const rellaxSaturne = new Rellax(saturneElement, {

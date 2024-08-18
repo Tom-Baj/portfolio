@@ -22,7 +22,7 @@ body {
   z-index: 1000;
   padding: 0.5rem 0;
 
-  transition: padding 0.6s ease-in-out; /* Ajout de la transition pour le padding */
+  transition: padding 0.6s ease-in-out;
 
   &__container {
     display: flex;
@@ -76,7 +76,7 @@ body {
 
     &__nav-link {
       color: $platinum;
-      font-family: "Chillax-Variable", sans-serif;
+      font-family: "Chillax-Regular", sans-serif;
       font-size: 1rem;
     }
   }
@@ -242,7 +242,7 @@ body {
   }
 
   &__description {
-    font-family: "Chillax-Variable", sans-serif;
+    font-family: "Chillax-Regular", sans-serif;
     font-size: 1.5rem;
   }
 
@@ -400,7 +400,6 @@ body {
     }
   }
 }
-
 /* Projects */
 .projects {
   min-height: 100vh;
@@ -492,9 +491,6 @@ body {
   }
 }
 
-/* .active {
-} */
-
 /* Project Content */
 .project-content {
   display: flex;
@@ -517,14 +513,14 @@ body {
   }
 
   &__description {
-    font-family: "Chillax-Variable", sans-serif;
+    font-family: "Chillax-Regular", sans-serif;
     font-size: 1rem;
     text-align: center;
     color: $rich-black;
   }
 
   &__role {
-    font-family: "Chillax-Variable", sans-serif;
+    font-family: "Chillax-Regular", sans-serif;
     margin: 2rem;
     text-align: center;
     color: $rich-black;
@@ -541,7 +537,7 @@ body {
       padding: 0.5rem 1rem;
       background-color: $yale-blue;
       color: $platinum;
-      font-family: "Chillax-Variable", sans-serif;
+      font-family: "Chillax-Regular", sans-serif;
       font-size: 0.7rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
@@ -711,11 +707,11 @@ body {
   background-color: $blue-dark;
   color: $platinum;
   font-size: 1rem;
-  font-family: "Chillax-Variable", sans-serif;
+  font-family: "Chillax-Regular", sans-serif;
   position: relative;
   z-index: 1000;
   margin-top: 20px;
-  overflow: hidden; // Contain the stars in the footer
+  overflow: hidden;
 
   /* Intégration des étoiles */
   #stars,
@@ -725,7 +721,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 0; // Derrière tout le contenu du footer
+    z-index: 0;
   }
 
   #stars {
@@ -754,18 +750,18 @@ body {
 
   &__container {
     position: relative;
-    z-index: 1; // S'assurer que le contenu est au-dessus des étoiles
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 10px auto 0 auto;
   }
 
   &__social-links {
     display: flex;
+    gap: 0.5rem;
     flex-direction: column;
     justify-content: flex-start;
     align-items: start;
@@ -809,24 +805,8 @@ body {
 
   &__informations {
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
-
-    .mention-legal {
-      margin-bottom: 1rem;
-
-      a {
-        color: $platinum;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        font-size: 1rem;
-
-        &:hover {
-          color: $light-sky-blue;
-        }
-      }
-    }
   }
 
   &__mail {
@@ -836,8 +816,86 @@ body {
       justify-content: center;
       align-items: center;
       gap: 1rem;
-      margin: 1rem 0 1rem 1rem;
       color: $platinum;
+
+      img {
+        width: 40px;
+        height: auto;
+      }
+    }
+  }
+
+  &__mention-legal {
+    margin: 1rem 0;
+    a {
+      color: $platinum;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+      margin: 1rem 0;
+
+      &:hover {
+        color: $light-sky-blue;
+      }
+    }
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  color: $background-color;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 8px;
+  }
+
+  &__close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__close:hover,
+  &__close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: $rich-black;
+    font-family: "Allan-700", sans-serif;
+    text-align: center;
+  }
+
+  &__section-title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  &__text {
+    font-size: 1rem;
+    line-height: 1.6;
+
+    &--strong {
+      font-size: 1.1rem;
     }
   }
 }
@@ -850,9 +908,8 @@ body {
 .scroll-top {
   width: 56px;
   position: fixed;
-  right: 300px;
-  bottom: 1rem;
   right: 1rem;
+  bottom: 1rem;
   cursor: pointer;
   font-size: 2rem;
   color: $platinum;
@@ -861,20 +918,6 @@ body {
     color: $light-sky-blue;
     transform: translateY(-5px);
   }
-}
-
-.image-end {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  position: relative;
-}
-
-.img-test {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 
 /* Responsive Styles */
@@ -932,9 +975,6 @@ body {
 
   /* Floating Elements */
   .floating-elements {
-    .astronaut {
-    }
-
     .moon {
       top: 50px;
       left: 10px;

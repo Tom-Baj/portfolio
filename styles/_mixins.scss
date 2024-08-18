@@ -18,8 +18,6 @@
     #{$dark-shadow-x} #{$dark-shadow-y} $shadow-depth $dark-shadow-color;
 }
 
-/* _mixins.scss */
-
 @function multiple-box-shadow($n, $color) {
   $value: "#{random(2000)}px #{random(2000)}px #{$color}";
   @for $i from 2 through $n {
