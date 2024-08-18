@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio de Développeur Web Junior | OpenClassrooms | Tom Bajoux</title>
-    <meta name="description" content="Découvrez le portfolio de [Ton Nom], développeur web junior formé chez OpenClassrooms. Spécialisé en développement frontend, HTML, CSS, JavaScript, React, et bien plus.">
+    <title>
+      Portfolio de Développeur Web Junior | OpenClassrooms | Tom Bajoux
+    </title>
+    <meta
+      name="description"
+      content="Découvrez le portfolio de [Ton Nom], développeur web junior formé chez OpenClassrooms. Spécialisé en développement frontend, HTML, CSS, JavaScript, React, et bien plus."
+    />
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="styles/style.css" />
@@ -15,7 +20,11 @@
       <div class="header__container">
         <div class="header__container__logo-container">
           <a href="#main" class="header__container__logo-link">
-            <img class="header__container__logo" src="assets/icons/logo.webp" alt="logo" />
+            <img
+              class="header__container__logo"
+              src="assets/icons/logo.webp"
+              alt="logo"
+            />
           </a>
         </div>
         <div class="header__container__nav-container">
@@ -30,41 +39,40 @@
         </div>
       </div>
     </header>
-    
+
     <main class="main" id="main">
       <div class="main__container">
         <div class="floating-elements">
           <div class="floating-elements__images-container">
-              <img
-                class="rellax astronaut"
-                data-rellax-speed="-5"
-                data-rellax-vertical-scroll-axis="y"
-                src="./assets/images/astronaut.webp"
-                alt="astronaut"
-              />
-              <img
-                class="rellax moon"
-                data-rellax-speed="-3"
-                src="./assets/images/moon.webp"
-                alt="moon"
-              />
-              <img
-                src="./assets/images/earth.webp"
-                alt="earth"
-                class="rellax earth"
-                data-rellax-speed="-6"
-              />
-              <img
-                src="./assets/images/saturne.webp"
-                alt="saturne"
-                class="rellax saturne"
-                data-rellax-speed="-4"
-                data-rellax-vertical-scroll-axis="xy"
-                
-              />
-            </div>
+            <img
+              class="rellax astronaut"
+              data-rellax-speed="-5"
+              data-rellax-vertical-scroll-axis="y"
+              src="./assets/images/astronaut.webp"
+              alt="astronaut"
+            />
+            <img
+              class="rellax moon"
+              data-rellax-speed="-3"
+              src="./assets/images/moon.webp"
+              alt="moon"
+            />
+            <img
+              src="./assets/images/earth.webp"
+              alt="earth"
+              class="rellax earth"
+              data-rellax-speed="-6"
+            />
+            <img
+              src="./assets/images/saturne.webp"
+              alt="saturne"
+              class="rellax saturne"
+              data-rellax-speed="-4"
+              data-rellax-vertical-scroll-axis="xy"
+            />
+          </div>
         </div>
-        <section class=" section-container" id="home">
+        <section class="section-container" id="home">
           <div class="home">
             <div class="home__image-container">
               <img
@@ -82,7 +90,7 @@
                   >Développeur web junior !
                 </span>
               </h1>
-            </div>              
+            </div>
           </div>
         </section>
 
@@ -98,17 +106,14 @@
                   prépare à devenir développeur web junior.
                 </p>
               </div>
-              <div
-                class="about__image-container"
-                
-              >
+              <div class="about__image-container">
                 <img
                   class="about__image"
                   src="assets/images/tom.webp"
                   alt="Tom Bajoux"
                   data-tilt
-                data-tilt-max="25"
-                data-tilt-speed="400"
+                  data-tilt-max="25"
+                  data-tilt-speed="400"
                 />
               </div>
             </div>
@@ -188,38 +193,63 @@
         <section class="contact section-container" id="contact">
           <div class="contact__content">
             <h2 class="contact__title">Contactez-moi</h2>
-            <form action="https://formspree.io/f/mgvwzyen" method="POST" class="contact__form">
+            <form
+              action="https://formspree.io/f/mgvwzyen"
+              method="POST"
+              class="contact__form"
+            >
               <div class="form-input">
-                <input type="text" id="name" name="name" class="form-name" required />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-name"
+                  required
+                />
                 <label for="name" class="form-name-label">Nom</label>
               </div>
               <div class="form-input">
-                <input type="email" id="email" name="email" class="form-email" required />
-                <label for="email" class="form-email-label">Adresse Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-email"
+                  required
+                />
+                <label for="email" class="form-email-label"
+                  >Adresse Email</label
+                >
               </div>
               <div class="form-input">
-                <textarea id="message" name="message" rows="5" class="form-message" required></textarea>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="form-message"
+                  required
+                ></textarea>
                 <label for="message" class="form-message-label">Message</label>
               </div>
-              <button type="submit" class="contact__form-button">Envoyer</button>
+              <button type="submit" class="contact__form-button">
+                Envoyer
+              </button>
             </form>
           </div>
         </section>
       </div>
-
     </main>
 
-         <div class="scroll-top" id="scroll-top">
-        <a href="#main" class="scroll-top-link">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path fill="none" d="M0 0h24v24H0Z" />
-            <path
-              fill="#FFF"
-              d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8 -3.59 8-8 8m0 2c5.52 0 10-4.48 10-10s-4.48-10-10-10C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10v0Zm-1-10v3c0 .55.45 1 1 1v0c.55 0 1-.45 1-1v-3h1.79c.45 0 .67-.54.35-.85l-2.79-2.79c-.2-.2-.51-.2-.71 0l-2.79 2.79c-.31.31-.09.85.36.85H11Z"
-            />
-          </svg>
-        </a>
-      </div>
+    <div class="scroll-top" id="scroll-top">
+      <a href="#main" class="scroll-top-link">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path fill="none" d="M0 0h24v24H0Z" />
+          <path
+            fill="#FFF"
+            d="M12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8 -3.59 8-8 8m0 2c5.52 0 10-4.48 10-10s-4.48-10-10-10C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10v0Zm-1-10v3c0 .55.45 1 1 1v0c.55 0 1-.45 1-1v-3h1.79c.45 0 .67-.54.35-.85l-2.79-2.79c-.2-.2-.51-.2-.71 0l-2.79 2.79c-.31.31-.09.85.36.85H11Z"
+          />
+        </svg>
+      </a>
+    </div>
     <footer id="footer" class="footer">
       <div id="stars"></div>
       <div id="stars2"></div>
@@ -229,8 +259,7 @@
         <div class="footer__informations">
           <div class="footer__mail">
             <a href="mailto:bajouxtom@gmail.com" class="mail">
-              <img class="mail__icon" src="./assets/icons/social/mail.svg">
-              </img>
+              <img class="mail__icon" src="./assets/icons/social/mail.svg" />
               <p class="mail__texte">Envoyer un email</p>
             </a>
           </div>
@@ -240,7 +269,6 @@
           <div class="footer__information">
             &#169; 2024 Tom Bajoux. Tous droits réservés
           </div>
-          
         </div>
       </div>
     </footer>
@@ -250,44 +278,69 @@
       <div class="modal__content">
         <span class="modal__close">&times;</span>
         <h1 class="modal__title">Mentions Légales</h1>
-    
+
         <h2 class="modal__section-title">Éditeur du site</h2>
         <p class="modal__text">
-          <strong class="modal__text--strong">Nom de l'éditeur :</strong> Tom Bajoux<br>
-          <strong class="modal__text--strong">Email :</strong> <a href="mailto:votre.email@example.com">bajouxtom@gmail.com</a><br>
-          <strong class="modal__text--strong">Directeur de la publication :</strong> Tom Bajoux
+          <strong class="modal__text--strong">Nom de l'éditeur :</strong> Tom
+          Bajoux<br />
+          <strong class="modal__text--strong">Email :</strong>
+          <a href="mailto:votre.email@example.com">bajouxtom@gmail.com</a><br />
+          <strong class="modal__text--strong"
+            >Directeur de la publication :</strong
+          >
+          Tom Bajoux
         </p>
-    
+
         <h2 class="modal__section-title">Hébergement</h2>
         <p class="modal__text">
-          <strong class="modal__text--strong">Nom de l'hébergeur :</strong> Netlify<br>
-          <strong class="modal__text--strong">Adresse :</strong> 2325 3rd Street, Suite 296, San Francisco, California 94107,<br>
-          <strong class="modal__text--strong">Site web :</strong> https://www.netlify.com
+          <strong class="modal__text--strong">Nom de l'hébergeur :</strong>
+          Netlify<br />
+          <strong class="modal__text--strong">Adresse :</strong> 2325 3rd
+          Street, Suite 296, San Francisco, California 94107,<br />
+          <strong class="modal__text--strong">Site web :</strong>
+          https://www.netlify.com
         </p>
-    
+
         <h2 class="modal__section-title">Propriété intellectuelle</h2>
         <p class="modal__text">
-          L'ensemble du contenu du site (textes, images, vidéos, etc.) est la propriété exclusive de Tom Bajoux, sauf mention contraire explicite. Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Tom Bajoux.
+          L'ensemble du contenu du site (textes, images, vidéos, etc.) est la
+          propriété exclusive de Tom Bajoux, sauf mention contraire explicite.
+          Toute reproduction, distribution, modification, adaptation,
+          retransmission ou publication, même partielle, de ces différents
+          éléments est strictement interdite sans l'accord exprès par écrit de
+          Tom Bajoux.
         </p>
-    
-        <h2 class="modal__section-title">Protection des données personnelles</h2>
+
+        <h2 class="modal__section-title">
+          Protection des données personnelles
+        </h2>
         <p class="modal__text">
-          Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de modification et de suppression des données personnelles que vous avez communiquées.<br>
-          Pour exercer ce droit, veuillez contacter : <a href="mailto:bajouxtom@gmail.com">bajouxtom@gmail.com</a>
+          Conformément à la loi « Informatique et Libertés » du 6 janvier 1978
+          modifiée et au Règlement Général sur la Protection des Données (RGPD),
+          vous disposez d'un droit d'accès, de rectification, de modification et
+          de suppression des données personnelles que vous avez communiquées.<br />
+          Pour exercer ce droit, veuillez contacter :
+          <a href="mailto:bajouxtom@gmail.com">bajouxtom@gmail.com</a>
         </p>
-    
+
         <h2 class="modal__section-title">Responsabilité</h2>
         <p class="modal__text">
-          Tom Bajoux s'efforce de fournir des informations aussi précises que possible sur le site. Toutefois, il ne peut être tenu responsable des omissions, des inexactitudes ou des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
+          Tom Bajoux s'efforce de fournir des informations aussi précises que
+          possible sur le site. Toutefois, il ne peut être tenu responsable des
+          omissions, des inexactitudes ou des carences dans la mise à jour,
+          qu'elles soient de son fait ou du fait des tiers partenaires qui lui
+          fournissent ces informations.
         </p>
-    
+
         <h2 class="modal__section-title">Contact</h2>
         <p class="modal__text">
-          Pour toute question ou demande d'information concernant les mentions légales, veuillez contacter : <a href="mailtobajouxtom@gmail.com">bajouxtom@gmail.com</a>.
+          Pour toute question ou demande d'information concernant les mentions
+          légales, veuillez contacter :
+          <a href="mailtobajouxtom@gmail.com">bajouxtom@gmail.com</a>.
         </p>
       </div>
     </aside>
-    
+
     <script src="/dist/bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
@@ -295,26 +348,23 @@
     <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
     <script src="node_modules/progressbar.js/dist/progressbar.min.js"></script>
 
-<!--     <script type="module" src="scripts/script.js"></script>
- -->    
+    <!--     <script type="module" src="scripts/script.js"></script>
+ -->
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    
-    function addScrollToTop() {
-      const scrollTop = document.getElementById("scroll-top");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 2000) {
-          scrollTop.style.display = "block";
-        } else {
-          scrollTop.style.display = "none";
+      document.addEventListener("DOMContentLoaded", () => {
+        function addScrollToTop() {
+          const scrollTop = document.getElementById("scroll-top");
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 2000) {
+              scrollTop.style.display = "block";
+            } else {
+              scrollTop.style.display = "none";
+            }
+          });
         }
-      });
-    }
-    
-    addScrollToTop();
-  });
-</script>
 
-    
+        addScrollToTop();
+      });
+    </script>
   </body>
 </html>
