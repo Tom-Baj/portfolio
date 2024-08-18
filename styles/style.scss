@@ -507,7 +507,7 @@ body {
   &__title {
     font-family: "Allan-Regular", sans-serif;
     font-size: 2.5rem;
-    margin: 2rem;
+    margin: 1.5rem;
     text-align: center;
     color: $yale-blue;
   }
@@ -522,6 +522,13 @@ body {
   &__role {
     font-family: "Chillax-Regular", sans-serif;
     margin: 2rem;
+    text-align: center;
+    color: $rich-black;
+  }
+
+  &__defis {
+    font-family: "Chillax-Regular", sans-serif;
+    margin: 1rem;
     text-align: center;
     color: $rich-black;
   }
@@ -550,7 +557,7 @@ body {
   position: fixed;
   top: 0;
   right: -300px;
-  width: 300px;
+  width: 350px;
   height: 100%;
   background: transparent;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
@@ -1122,7 +1129,20 @@ body {
     }
   }
 
-  /* Contact */
+  /* Project Content */
+  .project-content__role {
+    font-size: 1rem;
+  }
+
+  .project-content__defis {
+    font-size: 1rem;
+  }
+
+  .project-content__link-container {
+    button {
+      font-size: 0.8rem;
+    }
+  }
 }
 
 /* 768 */
@@ -1187,6 +1207,10 @@ body {
 
   .about__text {
     width: $width-max;
+  }
+
+  .project-content {
+    width: 200px;
   }
 }
 
