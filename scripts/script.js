@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hamburger();
   openModal();
   addScrollToTop();
+  initProgressBar();
 });
 
 function addScrollToTop() {
@@ -286,50 +287,55 @@ function populateSocialLinks(links) {
   });
 }
 
-/* Progress bar*/
-function progressBar() {
-  const allProgressBars = document.querySelectorAll(".progress-bars");
-  allProgressBars.forEach((progressBar, index) => {
-    const line = new ProgressBar.Line(progressBar, {
-      strokeWidth: 2,
-      easing: "easeInOut",
-      duration: 2000,
-      color: "#FFEA82",
-      trailColor: "#eee",
-      trailWidth: 1,
-      svgStyle: { width: "100%", height: "20%" },
-      text: {
-        style: {
-          color: "hsla(75, 6%, 87%, 1)",
-          position: "absolute",
-          right: "0",
-          top: "30px",
-          padding: 0,
-          margin: 0,
-          transform: null,
+function initProgressBar() {
+  let progressBarsAdded = false;
+
+  function progressBar() {
+    const allProgressBars = document.querySelectorAll(".progress-bars");
+    allProgressBars.forEach((progressBar, index) => {
+      const line = new ProgressBar.Line(progressBar, {
+        strokeWidth: 2,
+        easing: "easeInOut",
+        duration: 2000,
+        color: "#FFEA82",
+        trailColor: "#eee",
+        trailWidth: 1,
+        svgStyle: { width: "100%", height: "20%" },
+        text: {
+          style: {
+            color: "hsla(75, 6%, 87%, 1)",
+            position: "absolute",
+            right: "0",
+            top: "30px",
+            padding: 0,
+            margin: 0,
+            transform: null,
+          },
+          autoStyleContainer: false,
         },
-        autoStyleContainer: false,
-      },
-      from: { color: "#BC4749" },
-      to: { color: "#9add00" },
-      step: (state, line) => {
-        line.path.setAttribute("stroke", state.color);
-        line.setText(Math.round(line.value() * 100) + " %");
-      },
+        from: { color: "#BC4749" },
+        to: { color: "#9add00" },
+        step: (state, line) => {
+          line.path.setAttribute("stroke", state.color);
+          line.setText(Math.round(line.value() * 100) + " %");
+        },
+      });
+      line.animate(skillsList[index].progression);
     });
-    line.animate(skillsList[index].progression);
+  }
+
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    if (
+      !progressBarsAdded &&
+      scrollPosition >= 1028 &&
+      scrollPosition <= 1038
+    ) {
+      progressBar();
+      progressBarsAdded = true;
+    }
   });
 }
-
-/* Add Progress Bar */
-let progressBarsAdded = false;
-window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY;
-  if (!progressBarsAdded && scrollPosition >= 1028 && scrollPosition <= 1038) {
-    progressBar();
-    progressBarsAdded = true;
-  }
-});
 
 function openDrawer(projectId) {
   const drawer = document.getElementById("drawer");
