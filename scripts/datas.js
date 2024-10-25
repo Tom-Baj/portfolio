@@ -155,6 +155,16 @@ export const projectsList = [
     code: "https://github.com/Tom-Baj/photographe-nina-optimise.git",
   },
   {
+    id: "tictactoe",
+    title: "Tic Tac Toe",
+    description: "Jeu du morpion",
+    role: "Développement du jeu du morpion en utilisant HTML, CSS et Javascript",
+    image: "../assets/images/projets/tictactoe.webp",
+    size: "--small",
+    link: "https://tom-baj.github.io/tic-tac-toe/",
+    code: "https://github.com/Tom-Baj/tic-tac-toe",
+  },
+  {
     id: "architecte",
     title: "Portfolio Architecte d'intérieur",
     description: "Portfolio d'une architecte d'intérieur",
@@ -186,6 +196,16 @@ export const projectsList = [
     size: "--large",
     link: "https://tom-baj.github.io/agence-de-voyage/",
     code: "https://github.com/Tom-Baj/agence-de-voyage.git",
+  },
+  {
+    id: "calculatrice",
+    title: "Calculatrice",
+    description: "Calculatrice en ligne",
+    role: "Développement d'une calculatrice en utilisant HTML, CSS et Javascript",
+    image: "../assets/images/projets/calculatrice.webp",
+    size: "--medium",
+    link: "https://tom-baj.github.io/calculatrice/",
+    code: "https://github.com/Tom-Baj/calculatrice",
   },
 ];
 
