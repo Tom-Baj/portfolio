@@ -176,6 +176,16 @@ export const projectsList = [
     code: "https://github.com/Tom-Baj/portfolio-architecte.git",
   },
   {
+    id: "password",
+    title: "Générateur de mot de passe",
+    description: "Générateur de mot de passe en ligne",
+    role: "Développement d'un générateur de mot de passe en utilisant HTML, CSS et Javascript",
+    image: "../assets/images/projets/password.webp",
+    size: "--medium",
+    link: "https://tom-baj.github.io/password-generator/",
+    code: "https://github.com/Tom-Baj/password-generator.git",
+  },
+  {
     id: "faq",
     title: "FAQ Card",
     description: "FAQ Accordion Card avec CSS et Javascript",
