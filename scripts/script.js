@@ -287,6 +287,7 @@ function populateSocialLinks(links) {
   });
 }
 
+/* ProgressBar */
 function initProgressBar() {
   let progressBarsAdded = false;
 
@@ -337,6 +338,7 @@ function initProgressBar() {
   });
 }
 
+/* Drawer */
 function openDrawer(projectId) {
   const drawer = document.getElementById("drawer");
   const mainContainer = document.querySelector(".main__container");
@@ -373,6 +375,7 @@ function hamburger() {
   });
 }
 
+/* Modal */
 function openModal() {
   const modal = document.getElementById("legalModal");
   const link = document.querySelector(".legal-mentions-link");
