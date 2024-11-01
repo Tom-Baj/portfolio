@@ -5,19 +5,6 @@ function rellax() {
   });
 }
 
-/* Header */
-function headerScrolled() {
-  const header = document.querySelector("header");
-  const headerLogo = document.querySelector(".header__container__logo");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 0) {
-      header.classList.add("scrolled");
-    } else {
-      header.classList.remove("scrolled");
-    }
-  });
-}
-
 function initTilt() {
   const elements = document.querySelectorAll("[data-tilt]");
   VanillaTilt.init(elements, {
@@ -48,7 +35,8 @@ function initTilt() {
 
 document.addEventListener("DOMContentLoaded", function () {
   initTilt();
-  initHoverTilt();
+  /*   initHoverTilt();
+   */
 });
 
 /* Type Writing */
@@ -158,11 +146,4 @@ function animateSaturne() {
   });
 }
 
-export {
-  headerScrolled,
-  rellax,
-  initTilt,
-  typeWriting,
-  scrollAnimation,
-  animateSaturne,
-};
+export { rellax, initTilt, typeWriting, scrollAnimation, animateSaturne };
