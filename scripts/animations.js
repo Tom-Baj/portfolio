@@ -1,9 +1,11 @@
+/* Rellax */
 function rellax() {
   var rellax = new Rellax(".rellax", {
     horizontal: true,
   });
 }
 
+/* Header */
 function headerScrolled() {
   const header = document.querySelector("header");
   const headerLogo = document.querySelector(".header__container__logo");
@@ -25,7 +27,7 @@ function initTilt() {
   });
 }
 
-function initHoverTilt() {
+/* function initHoverTilt() {
   const tiltElements = document.querySelectorAll(".about__image-container");
 
   tiltElements.forEach((tiltElement) => {
@@ -42,13 +44,14 @@ function initHoverTilt() {
       }
     });
   });
-}
+} */
 
 document.addEventListener("DOMContentLoaded", function () {
   initTilt();
   initHoverTilt();
 });
 
+/* Type Writing */
 function typeWriting() {
   let typeWriting = document.querySelector(".type-writing");
   let content = typeWriting.textContent;
@@ -116,7 +119,7 @@ function scrollAnimation() {
   });
 }
 
-function initSubtleTilt() {
+/* function initSubtleTilt() {
   const subtleTiltElement = document.querySelector(".about__image-container");
 
   if (subtleTiltElement) {
@@ -129,7 +132,7 @@ function initSubtleTilt() {
 
 document.addEventListener("DOMContentLoaded", function () {
   initSubtleTilt();
-});
+}); */
 
 function animateSaturne() {
   const saturneElement = document.querySelector(".saturne");
