@@ -9,7 +9,6 @@ import {
 } from "./datas.js";
 
 import {
-  headerScrolled,
   rellax,
   initTilt,
   typeWriting,
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   typeWriting();
   scrollAnimation();
   rellax();
-  headerScrolled();
   populateSocialLinks(socialLinks);
   createProjectsContent(projectsList);
   animateSaturne();
