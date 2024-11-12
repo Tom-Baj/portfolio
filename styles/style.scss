@@ -412,7 +412,15 @@ body {
     text-align: center;
   }
 
-  .projects-list {
+  &__button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+  }
+
+  & .projects-list {
     width: $width-big;
     margin: 0 auto;
 
