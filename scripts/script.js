@@ -325,11 +325,7 @@ function initProgressBar() {
 
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
-    if (
-      !progressBarsAdded &&
-      scrollPosition >= 1028 &&
-      scrollPosition <= 1038
-    ) {
+    if (!progressBarsAdded && scrollPosition >= 1000) {
       progressBar();
       progressBarsAdded = true;
     }
