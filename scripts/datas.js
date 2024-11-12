@@ -20,16 +20,16 @@ export const skillsList = [
     progression: 0.8,
   },
   {
-    name: "Sass",
-    icon: "sass",
-    pourcentage: "80%",
-    progression: 0.8,
-  },
-  {
     name: "Javascript",
     icon: "javascript",
     pourcentage: "70%",
     progression: 0.7,
+  },
+  {
+    name: "Sass",
+    icon: "sass",
+    pourcentage: "80%",
+    progression: 0.8,
   },
   {
     name: "React",
@@ -59,16 +59,16 @@ export const skillsList = [
 
 export const osList = [
   {
+    name: "MacOS",
+    icon: "apple",
+  },
+  {
     name: "Windows",
     icon: "windows-11",
   },
   {
     name: "Linux",
     icon: "linux",
-  },
-  {
-    name: "MacOS",
-    icon: "apple",
   },
 ];
 
@@ -84,10 +84,6 @@ export const softwareList = [
   {
     name: "Photoshop",
     icon: "photoshop",
-  },
-  {
-    name: "Illustrator",
-    icon: "illustrator",
   },
 ];
 
