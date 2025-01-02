@@ -140,6 +140,16 @@ export const projectsList = [
     code: "https://github.com/Tom-Baj/interactive-rating-component.git",
   },
   {
+    id: "todo",
+    title: "Todo List",
+    description: "Application de gestion de tâches",
+    role: "Développement de l'application Todo List en utilisant React",
+    image: "../assets/images/projets/todo.webp",
+    size: "--medium",
+    link: "https://todo-app-kappa-black.vercel.app/",
+    code: "https://github.com/Tom-Baj/todo-app",
+  },
+  {
     id: "nina",
     title: "Photographe, Nina Carducci",
     description: "Debug et optimisation du site de Nina Carducci",
