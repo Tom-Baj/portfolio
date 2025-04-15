@@ -8,10 +8,13 @@
     </title>
     <meta
       name="description"
-      content="Découvrez le portfolio de [Ton Nom], développeur web junior formé chez OpenClassrooms. Spécialisé en développement frontend, HTML, CSS, JavaScript, React, et bien plus."
+      content="Découvrez le portfolio de Tom Bajoux, développeur web junior formé chez OpenClassrooms. Spécialisé en développement frontend, HTML, CSS, JavaScript, React, et bien plus."
     />
     <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles/style.css" />
   </head>
 
@@ -101,17 +104,34 @@
           </div>
         </section>
 
-        <section class="about section-container" id="about">
+        <section class="section-container" id="about">
           <div class="about">
             <div class="about__content">
               <div class="about__text">
                 <h2 class="about__title">À propos de moi</h2>
+                <span class="about__title--border-bottom"></span>
                 <p class="about__description">
                   Ancien coiffeur et barbier, j'ai choisi de me reconvertir dans
                   le développement web, une passion de longue date. Actuellement
                   en formation "Développeur Web" chez OpenClassrooms, je me
                   prépare à devenir développeur web junior.
                 </p>
+                <div class="about__cv-container">
+                  <a
+                    href="assets/cv/cv.pdf"
+                    class="cv-button-glass"
+                    target="_blank"
+                  >
+                    <img
+                      src="/assets/cv/cv.png"
+                      alt="Icône CV"
+                      class="cv-button-glass__icon"
+                    />
+                    <span class="cv-button-glass__text"
+                      >Télécharger mon CV</span
+                    >
+                  </a>
+                </div>
               </div>
               <div class="about__image-container">
                 <img

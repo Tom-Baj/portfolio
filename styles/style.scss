@@ -215,39 +215,102 @@ body {
 
 /* About */
 .about {
+  background-color: $platinum-light;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  flex-direction: column;
+  width: $width-max;
+  border-radius: $radius-large;
 
   &__content {
-    background-color: $platinum;
-    color: $background-color;
     font-size: 2rem;
     padding: 2rem;
     border-radius: $radius-medium;
-    width: $width-full;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
   }
 
-  &__text {
+  .about__text {
     width: $width-middle;
-    @include neumorphism-shadow($shadow-depth, 330deg, 150deg);
-    padding: 1rem;
-    border-radius: $radius-medium;
+    padding: 2rem;
+    border-radius: $radius-large;
+    background: linear-gradient(145deg, #f0f0f0, #dcdcdc);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+      -5px -5px 15px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease-in-out;
   }
 
-  &__title {
+  .about__title {
     font-family: "Allan-Regular", sans-serif;
     font-size: 2.5rem;
-    margin-bottom: 25px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+
+    &--border-bottom {
+      display: block;
+      width: $width-max;
+      height: 1px;
+      background-color: $background-color;
+      margin-bottom: 1rem;
+      opacity: 0.35;
+    }
   }
 
-  &__description {
-    font-family: "Chillax-Regular", sans-serif;
-    font-size: 1.5rem;
+  .about__description {
+    font-family: "Kanit", sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  &__cv-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  /* Glass Button Styles */
+  .cv-button-glass {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .cv-button-glass:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+    color: $background-color;
+  }
+
+  .cv-button-glass__icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cv-button-glass__text {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   }
 
   &__image-container {
