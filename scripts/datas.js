@@ -166,7 +166,7 @@ export const projectsList = [
     description: "Jeu du morpion",
     role: "Développement du jeu du morpion en utilisant HTML, CSS et Javascript",
     image: "../assets/images/projets/tictactoe.webp",
-    size: "--small",
+    size: "--large",
     link: "https://tom-baj.github.io/tic-tac-toe/",
     code: "https://github.com/Tom-Baj/tic-tac-toe",
   },
