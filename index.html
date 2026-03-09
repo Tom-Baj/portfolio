@@ -26,13 +26,13 @@
             <img
               class="header__container__logo"
               src="assets/icons/logo.webp"
-              alt="logo"
+              alt="Tom Bajoux - retour à l'accueil"
             />
           </a>
         </div>
         <div class="header__container__nav-container">
           <nav class="header__container__nav">
-            <div class="hamburger" id="hamburger">
+            <div class="hamburger" id="hamburger" aria-label="Ouvrir le menu" role="button">
               <span></span>
               <span></span>
               <span></span>
@@ -294,7 +294,7 @@
             <a href="#" class="legal-mentions-link">Mention légale</a>
           </div>
           <div class="footer__information">
-            &#169; 2024 Tom Bajoux. Tous droits réservés
+            &#169; 2026 Tom Bajoux. Tous droits réservés
           </div>
         </div>
       </div>
@@ -363,7 +363,7 @@
         <p class="modal__text">
           Pour toute question ou demande d'information concernant les mentions
           légales, veuillez contacter :
-          <a href="mailtobajouxtom@gmail.com">bajouxtom@gmail.com</a>.
+          <a href="mailto:bajouxtom@gmail.com">bajouxtom@gmail.com</a>.
         </p>
       </div>
     </aside>
@@ -376,21 +376,5 @@
 
     <script type="module" src="scripts/script.js"></script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        function addScrollToTop() {
-          const scrollTop = document.getElementById("scroll-top");
-          window.addEventListener("scroll", () => {
-            if (window.scrollY > 2000) {
-              scrollTop.style.display = "block";
-            } else {
-              scrollTop.style.display = "none";
-            }
-          });
-        }
-
-        addScrollToTop();
-      });
-    </script>
   </body>
 </html>

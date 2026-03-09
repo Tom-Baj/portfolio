@@ -108,12 +108,12 @@ function osLists(os) {
 
 /* Software List */
 function softwareLists(software) {
-  softwareList.forEach((software) => {
+  software.forEach((softwareItem) => {
     const li = document.createElement("li");
     li.classList.add("software");
     li.innerHTML = `
-      <img src="../assets/icons/${software.icon}.svg" alt="${software.name}" />
-      <p>${software.name}</p>
+      <img src="../assets/icons/${softwareItem.icon}.svg" alt="${softwareItem.name}" />
+      <p>${softwareItem.name}</p>
     `;
     softwareListContainer.appendChild(li);
   });
@@ -164,16 +164,16 @@ function createProjects(projects) {
     div.addEventListener("click", function () {
       openDrawer(project.id);
     });
+  });
 
-    // Initialisation de Masonry
-    imagesLoaded(grid, function () {
-      new Masonry(grid, {
-        itemSelector: ".projects-list__project",
-        percentPosition: true,
-        columnWidth: ".projects-list__project",
-        stagger: 30,
-        gutter: 10,
-      });
+  // Initialisation de Masonry (une seule fois après la boucle)
+  imagesLoaded(grid, function () {
+    new Masonry(grid, {
+      itemSelector: ".projects-list__project",
+      percentPosition: true,
+      columnWidth: ".projects-list__project",
+      stagger: 30,
+      gutter: 10,
     });
   });
 }
@@ -250,7 +250,7 @@ function createProjectsContent(projects) {
     projectContent.appendChild(projectContentTitle);
     projectContent.appendChild(projectContentDescription);
     projectContent.appendChild(projectContentRole);
-    projectContent.appendChild(projetContentDefis);
+    if (project.defis) projectContent.appendChild(projetContentDefis);
     projectContent.appendChild(linkContainer);
 
     drawerContainer.appendChild(projectContent);
